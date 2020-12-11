@@ -19,13 +19,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>Re:从零开始的Python3学习笔记 02 - The best of ideallove</title>
+  <title>Re:从零开始的Python3学习笔记 06 - The best of ideallove</title>
   
     <meta name="keywords" content="python,语言基础">
   
 
   
-    <meta name="description" content="<blockquote><h3><center>Python3 基础学习笔记（二） -- 快速上手：Python基础知识2</center></h3></blockquote><br />本节记录了本节记录了函数和模块、经典的海龟绘图、简单的数据类型转换。">
+    <meta name="description" content="<blockquote><h3><center>Python3 基础学习笔记（六）元组</center></h3></blockquote><br/>">
   
 
   <!-- feed -->
@@ -60,7 +60,7 @@
 <body>
   
 
-<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -311,7 +311,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper post dock' style="display: none;">
+        <div id="half" class='cover-wrapper post dock' style="display: ;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
           
@@ -362,13 +362,13 @@
   <div class="article-meta" id="top">
     
     
-      <a title='Re:从零开始的Python3学习笔记 02' href='/python-basic-02/'>
-        <img class='thumbnail' src='https://cdn.idealx.cn/blogimage/python/python-icon.png'>
+      <a title='Re:从零开始的Python3学习笔记 06' href='/python/basic-06.html'>
+        <img class='thumbnail' src='https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/python/python-icon.png'>
       </a>
     
     
       <h1 class="title">
-        Re:从零开始的Python3学习笔记 02
+        Re:从零开始的Python3学习笔记 06
       </h1>
       <div class='new-meta-box'>
         
@@ -399,7 +399,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年3月16日</p>
+    <p>发布于：2020年5月1日</p>
   </a>
 </div>
 
@@ -416,95 +416,144 @@
 
 
   
-  <blockquote><center>Python3 基础学习笔记（二） -- 函数、模块</center></blockquote>
+  <blockquote><center>Python3 基础学习笔记（六） --  元组</center></blockquote>
 
-<h2 id="1-5-函数"><a href="#1-5-函数" class="headerlink" title="- 1.5 函数"></a>- 1.5 函数</h2><p>在 Python 中，像 C 语言一样，我们称为函数；在 Java 中，我们称为方法。</p>
-<p>这里记录几个比较简单的函数，后面会遇到各种各样的函数和函数库。</p>
-<h5 id="pow-函数"><a href="#pow-函数" class="headerlink" title="pow 函数"></a>pow 函数</h5><p>函数 pow 相当于 <strong>乘方</strong> （power）运算。它可以 用于编写数值表达式。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">2</span> ** <span class="number">10</span></span><br><span class="line"><span class="number">1024</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">pow</span>(<span class="number">2</span>, <span class="number">10</span>)</span><br><span class="line"><span class="number">1024</span></span><br></pre></td></tr></table></figure>
-
-<p>像 pow 函数这样的标准函数，称为 <strong>内置函数</strong> 。</p>
-<h5 id="abs-函数"><a href="#abs-函数" class="headerlink" title="abs 函数"></a>abs 函数</h5><p>函数 abs 计算 <strong>绝对值</strong> （absolute value） ，绝大多数编程语言甚至 excel 中的公式都是这样。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">abs</span>(-<span class="number">1024</span>)</span><br><span class="line"><span class="number">1024</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="round-函数"><a href="#round-函数" class="headerlink" title="round 函数"></a>round 函数</h5><p>函数 round 将浮点数圆整为与之 <strong>最接近</strong> 的整数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">5</span> // <span class="number">3</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">round</span>(<span class="number">5</span>/<span class="number">3</span>)</span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-<p>整除总是向下圆整，round函数总是向最近的整数圆整。</p>
-<h5 id="int-函数"><a href="#int-函数" class="headerlink" title="int 函数"></a>int 函数</h5><p>函数 int 将浮点数转换向下圆整为整数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">int</span>(<span class="number">19.9</span>)</span><br><span class="line"><span class="number">19</span></span><br></pre></td></tr></table></figure>
-
-<p>其他向下圆整和向上圆整的函数将在「模块」部分记录。</p>
-<h2 id="1-6-模块"><a href="#1-6-模块" class="headerlink" title="- 1.6 模块"></a>- 1.6 模块</h2><p>使用 <code>import</code> 命令使用模块。模块 是 基础函数 的扩展，通过将其导入可以扩展 Python 的功能。（就像 Java 的import 一样）</p>
-<h3 id="1-6-1-import-命令"><a href="#1-6-1-import-命令" class="headerlink" title="- 1.6.1 import 命令"></a>- 1.6.1 import 命令</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> math</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>math.floor(<span class="number">20.9</span>) <span class="comment"># 向下圆整</span></span><br><span class="line"><span class="number">20</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>math.ceil(<span class="number">20.4</span>) <span class="comment"># 向上圆整</span></span><br><span class="line"><span class="number">21</span></span><br></pre></td></tr></table></figure>
-
-<p>如果确定不会从不同的模块导入多个同名函数，可能不想每次调用函数时都指定函数名。这种情况下，需要使用<code>import</code> 命令的变种 <code>from module import function</code> 。</p>
-<h5 id="sqrt-函数"><a href="#sqrt-函数" class="headerlink" title="sqrt 函数"></a>sqrt 函数</h5><p>函数 sqrt 计算 平方根（square root） </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sqrt(<span class="number">16</span>)</span><br><span class="line"><span class="number">4.0</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="1-6-2-使用变量引用函数"><a href="#1-6-2-使用变量引用函数" class="headerlink" title="- 1.6.2 使用变量引用函数"></a>- 1.6.2 使用变量引用函数</h3><p>在 Python 中可以使用变量来引用函数（以及其他大部分的 Python 元素）。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>XD = math.sqrt <span class="comment"># 变量XD</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>XD(<span class="number">4</span>)</span><br><span class="line"><span class="number">2.0</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="1-6-3-复数-和-cmath"><a href="#1-6-3-复数-和-cmath" class="headerlink" title="- 1.6.3 复数 和 cmath"></a>- 1.6.3 复数 和 cmath</h3><p>函数 sqrt 用于计算平方根，但它仅限于 <strong>实数</strong> 领域。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>sqrt(-<span class="number">2</span>)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;&lt;pyshell#15&gt;&quot;</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    sqrt(-<span class="number">2</span>)</span><br><span class="line">ValueError: math domain error <span class="comment"># 这是报错信息</span></span><br></pre></td></tr></table></figure>
-
-<p>直接使用 math 函数库中的 sqrt 函数会报错，有些平台可能显示 <code>nan</code> （非数值 not a number）。</p>
-<p>如果是复数（complex number）的话，Python 标准库提供了一个专门用于处理复数的模块。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> cmath</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cmath.sqrt(-<span class="number">1</span>)</span><br><span class="line"><span class="number">1j</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>(<span class="number">1</span> + <span class="number">3j</span>) * (<span class="number">10</span> + <span class="number">2j</span>)</span><br><span class="line">(<span class="number">4</span>+<span class="number">32j</span>)</span><br></pre></td></tr></table></figure>
-
-<p>1j 是一个虚数，虚数以 j 或者 J 结尾。</p>
+<hr>
+<h3 id="4-元组"><a href="#4-元组" class="headerlink" title="- 4 元组"></a>- 4 元组</h3><p><strong>元组（Tuple）</strong>类似列表，与列表的主要区别有以下两点。</p>
+<p>（1）元组不能对其元素进行变动，而列表允许。</p>
+<p>（2）元组用小括号表示<code>()</code>，而列表使用中括号<code>[]</code>。</p>
+<h3 id="4-1-元组基础知识"><a href="#4-1-元组基础知识" class="headerlink" title="- 4.1 元组基础知识"></a>- 4.1 元组基础知识</h3><p><strong>元组（Tuple）</strong>是不可变的序列，也是一种可以存储各种数据类型的集合，用小括号 <code>()</code> 表示元组的开始和结束，元素之间用逗号 <code>,</code> 分隔。类似列表。</p>
 <blockquote>
-<p>Python 本身提供了对复数的支持，Python 没有专门表示虚数的类型，而将虚数视为实部为零的复数。</p>
+<p>这里的不可变，包括不能对元组对象进行增加元素、变换元素位置、修改元素、删除元素操作。</p>
 </blockquote>
-<p><strong>以上演示都在交互式解释器中执行。当然，也可以创建一个 <code>.py</code> 文件，像创建 C 程序或 Java 程序一样。</strong></p>
-<h3 id="1-6-4-海龟绘图法"><a href="#1-6-4-海龟绘图法" class="headerlink" title="- 1.6.4 海龟绘图法"></a>- 1.6.4 海龟绘图法</h3><p>Python 有一些有趣的玩意儿，比如海龟（turtle）。它的绘画功能十分不可思议。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># turtle_01.py 画出一个三角形</span></span><br><span class="line"><span class="keyword">import</span> turtle</span><br><span class="line">t=turtle.Pen()</span><br><span class="line">t.forward(<span class="number">100</span>)</span><br><span class="line">t.left(<span class="number">120</span>)</span><br><span class="line">t.forward(<span class="number">100</span>)</span><br><span class="line">t.left(<span class="number">120</span>)</span><br><span class="line">t.forward(<span class="number">100</span>)</span><br></pre></td></tr></table></figure>
+<p>元素中每个元素提供对应的一个下标，下标从 0 开始，0、1、2…按顺序标注。</p>
+<h3 id="4-1-1-元组基本定义"><a href="#4-1-1-元组基本定义" class="headerlink" title="- 4.1.1 元组基本定义"></a>- 4.1.1 元组基本定义</h3><p>这里使用 <code>交互式解释器（IDLE解释器）</code> 进行记录。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>()			<span class="comment"># 空元组</span></span><br><span class="line">()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>test1 = ()	<span class="comment"># 定义空元组变量</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">len</span>(test1)	<span class="comment"># 统计元组元素个数</span></span><br><span class="line"><span class="number">0</span>				<span class="comment"># 统计结果为 0</span></span><br></pre></td></tr></table></figure>
 
-<p>会看到一个三角形的物体在移动，那就是海龟，哈哈哈哈。</p>
-<p>再画一些有趣的东西。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># NiceHexSpiral.py</span></span><br><span class="line"><span class="keyword">import</span> turtle</span><br><span class="line">colors=[<span class="string">&#x27;red&#x27;</span>,<span class="string">&#x27;purple&#x27;</span>,<span class="string">&#x27;blue&#x27;</span>,<span class="string">&#x27;green&#x27;</span>,<span class="string">&#x27;yellow&#x27;</span>,<span class="string">&#x27;orange&#x27;</span>]</span><br><span class="line">t=turtle.Pen()</span><br><span class="line">turtle.bgcolor(<span class="string">&#x27;black&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">360</span>):</span><br><span class="line">    t.pencolor(colors[x%<span class="number">6</span>])</span><br><span class="line">    t.width(x/<span class="number">100</span>+<span class="number">1</span>)</span><br><span class="line">    t.forward(x)</span><br><span class="line">    t.left(<span class="number">59</span>)</span><br></pre></td></tr></table></figure>
+<p>多数据类型的、多元素、重复元素元组对象定义：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>test2 = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>)	<span class="comment"># 定义多元素、多数据类型、可重复的数组</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>test2						<span class="comment"># 执行元组变量 test2</span></span><br><span class="line">(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>)				<span class="comment"># 显示元组变量的所有元素结果</span></span><br></pre></td></tr></table></figure>
 
-<p>这是一个彩色螺旋线的 Demo，可以看到 Python 语言来实现它真的非常容易。</p>
+<h3 id="4-1-2-一个元素的元组定义"><a href="#4-1-2-一个元素的元组定义" class="headerlink" title="- 4.1.2 一个元素的元组定义"></a>- 4.1.2 一个元素的元组定义</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>test3 = (<span class="number">10</span>)		<span class="comment"># 给变量 test3 赋值</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">type</span>(test3)			<span class="comment"># 用 type函数 检查 test3 的对象类型</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> &#x27;<span class="title">int</span>&#x27;&gt;			# 检查结果是整型</span></span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p>其中涉及的列表、循环语句等将在后面记录。</p>
+<p>当给元组变量赋一个元素时，不能采用 <code>test3 = (1)</code>。该赋值结果 Python 会把 1 两边的小括号当作数学运算中的小括号，其结果和 <code>test3 = 1</code>  一致。</p>
 </blockquote>
-<h2 id="1-7-数据类型转换"><a href="#1-7-数据类型转换" class="headerlink" title="- 1.7 数据类型转换"></a>- 1.7 数据类型转换</h2><p>当一种类型的数据被使用时，有时需要将其转换为其他类型的数据。Python 提供了一些内置函数。</p>
-<p>1、转化为整数：函数 <code>int(x)</code>，x 为数字或字符串型的数字，但不支持复数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">int</span>(<span class="number">5.2</span>)</span><br><span class="line"><span class="number">5</span>	<span class="comment"># 小数部分丢弃</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">int</span>(<span class="string">&#x27;20&#x27;</span>)</span><br><span class="line"><span class="number">20</span></span><br></pre></td></tr></table></figure>
-
-<p>2、转化为浮点数：函数 <code>float(x)</code>，x 为数字或字符串型的数字，但不支持复数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">float</span>(<span class="number">50</span>)</span><br><span class="line"><span class="number">50.0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">float</span>(<span class="string">&#x27;20.5&#x27;</span>)</span><br><span class="line"><span class="number">20.5</span></span><br></pre></td></tr></table></figure>
-
-<p>3、转化为复数：函数 <code>complex(x,y)</code>，x、y为整数、浮点数、布尔数；当只有 x 参数时 (y=0) 可以是<strong>字符串型整数</strong>、浮点数、布尔数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">complex</span>(<span class="number">2</span>,<span class="number">5</span>)</span><br><span class="line">(<span class="number">2</span>+<span class="number">5j</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">complex</span>(<span class="string">&#x27;20&#x27;</span>)</span><br><span class="line">(<span class="number">20</span>+<span class="number">0j</span>)</span><br></pre></td></tr></table></figure>
-
-<p>4、转化为字符串：函数<code>str(x)</code>，在将数字拼接进字符串时一定要用。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">str</span>(<span class="number">2</span>+<span class="number">5j</span>)</span><br><span class="line"><span class="string">&#x27;(2+5j)&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>要给元组变量赋一个元素，并消除小括号歧义，需要使用以下方式：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>test3 = (<span class="string">&#x27;OK&#x27;</span>,)	<span class="comment"># 给 test3 变量赋一个元组元素，必须带逗号</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">type</span>(test3)</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> &#x27;<span class="title">tuple</span>&#x27;&gt;		# 检查元组类型，正确</span></span><br><span class="line"><span class="class">&gt;&gt;&gt; <span class="title">print</span>(<span class="params">test3</span>)</span></span><br><span class="line"><span class="class">(<span class="params"><span class="string">&#x27;OK&#x27;</span>,</span>)				# 输出带逗号的元组</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>在python2版本中不支持二进制、八进制和十六进制数字的转化。</p>
+<p>元组赋值带逗号，是元组区别于其他数据类型的一个特性。</p>
 </blockquote>
-<p>5、转化为二进制数：函数 <code>bin(x)</code>，x 为非负整数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">bin</span>(<span class="number">3</span>)</span><br><span class="line"><span class="string">&#x27;0b11&#x27;</span></span><br></pre></td></tr></table></figure>
+<h3 id="4-1-3-省略小括号的元组定义"><a href="#4-1-3-省略小括号的元组定义" class="headerlink" title="- 4.1.3 省略小括号的元组定义"></a>- 4.1.3 省略小括号的元组定义</h3><p>Python 允许一种省略小括号的元组。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>name,age=<span class="string">&#x27;rain&#x27;</span>,<span class="number">19</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>(name,age)</span><br><span class="line">(<span class="string">&#x27;rain&#x27;</span>, <span class="number">19</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>name,age			<span class="comment"># 执行不带小括号的元组</span></span><br><span class="line">(<span class="string">&#x27;rain&#x27;</span>, <span class="number">19</span>)</span><br></pre></td></tr></table></figure>
 
-<p>6、转化为八进制数：函数 <code>oct(x)</code>，x 为非负整数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">oct</span>(<span class="number">10</span>)</span><br><span class="line"><span class="string">&#x27;0o12&#x27;</span></span><br></pre></td></tr></table></figure>
+<h3 id="4-2-元组基本操作"><a href="#4-2-元组基本操作" class="headerlink" title="- 4.2 元组基本操作"></a>- 4.2 元组基本操作</h3><blockquote>
+<p>元组操作实现分为三个部分：</p>
+<p>第一部分，借助运算操作符号实现，例如<code>=</code>、<code>+</code>；</p>
+<p>第二部分，借助元组自带的方法实现；</p>
+<p>第三部分，借助 Python 内置函数实现；</p>
+</blockquote>
+<p><strong>元组基本操作方法</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">方法功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">count</td>
+<td align="center">统计指定的元素个数</td>
+</tr>
+<tr>
+<td align="center">index</td>
+<td align="center">返回指定元素的下标</td>
+</tr>
+</tbody></table>
+<p><strong>元组操作相关内置函数</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">函数名称</th>
+<th align="center">函数功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">len</td>
+<td align="center">统计元组元素个数</td>
+</tr>
+<tr>
+<td align="center">max</td>
+<td align="center">返回元组中最大值的元素</td>
+</tr>
+<tr>
+<td align="center">min</td>
+<td align="center">返回元组中最小值的元素</td>
+</tr>
+<tr>
+<td align="center">tuple</td>
+<td align="center">将列表转换为元组</td>
+</tr>
+<tr>
+<td align="center">type</td>
+<td align="center">返回对象类型</td>
+</tr>
+<tr>
+<td align="center">del</td>
+<td align="center">删除整个元组对象</td>
+</tr>
+<tr>
+<td align="center">sum</td>
+<td align="center">对元组对象的所有元素求和</td>
+</tr>
+</tbody></table>
+<h3 id="4-3-元组操作实例"><a href="#4-3-元组操作实例" class="headerlink" title="- 4.3 元组操作实例"></a>- 4.3 元组操作实例</h3><h3 id="4-3-1-建立元组"><a href="#4-3-1-建立元组" class="headerlink" title="- 4.3.1 建立元组"></a>- 4.3.1 建立元组</h3><p>创建一个 <code>.py</code> 文件：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">nums = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)				<span class="comment"># 定义元组1</span></span><br><span class="line">words = (<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;e&#x27;</span>)	<span class="comment"># 定义元组2</span></span><br><span class="line">mix = (nums, words)					<span class="comment"># 元组嵌套元组</span></span><br><span class="line">print(mix)							<span class="comment"># 打印</span></span><br><span class="line"><span class="built_in">list</span> = [<span class="string">&#x27;YES&#x27;</span>]						<span class="comment"># 定义列表</span></span><br><span class="line">mix = (nums, words, <span class="built_in">list</span>)			<span class="comment"># 元组嵌套</span></span><br><span class="line">print(mix)							<span class="comment"># 打印</span></span><br></pre></td></tr></table></figure>
 
-<p>7、转化为十六进制：函数 <code>hex(x)</code>，x 为非负整数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">hex</span>(<span class="number">20</span>)</span><br><span class="line"><span class="string">&#x27;0x14&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">((<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>), (<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;e&#x27;</span>))</span><br><span class="line">((<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>), (<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;e&#x27;</span>), [<span class="string">&#x27;YES&#x27;</span>])</span><br></pre></td></tr></table></figure>
 
-<p>8、将十进制数转化为 ASCII 码：函数 <code>chr(x)</code>，x 为十进制数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">chr</span>(<span class="number">98</span>)</span><br><span class="line"><span class="string">&#x27;b&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>9、将 ASCII 码转化为十进制数：函数 <code>ord(x)</code>，x 为 ASCII 码字符。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">ord</span>(<span class="string">&#x27;b&#x27;</span>)</span><br><span class="line"><span class="number">98</span></span><br></pre></td></tr></table></figure>
-
-
-<h2 id="小结-amp-amp-后记"><a href="#小结-amp-amp-后记" class="headerlink" title="小结 &amp;&amp; 后记"></a>小结 &amp;&amp; 后记</h2><p>本节记录了函数和模块，经典的海龟绘图，以及简单的数据类型转换。</p>
-<p>个人觉得 Python 似乎不是我想象中那么难，但是知识点还是非常多的，可能我学其他语言的时候没这么认真。</p>
-<p>至少海龟绘图是非常有趣的。</p>
 <blockquote>
-<p>Update 2020/3/26：添加了简单的数据类型转换</p>
+<p>从这个案例可以看出，元组不仅可以嵌套元组，还可以嵌套其他数据类型。</p>
+</blockquote>
+<h3 id="4-3-2-查找元素"><a href="#4-3-2-查找元素" class="headerlink" title="- 4.3.2 查找元素"></a>- 4.3.2 查找元素</h3><p>查找元组中的元组，主要通过元组下标来实现。类似列表。</p>
+<p>创建一个 <code>.py</code> 文件：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nums = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)</span><br><span class="line">print(nums[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>查找指定元素可以使用 <code>index方法</code> ，参考 <strong>3.2.2 查找列表元素</strong>。</p>
+<h3 id="4-3-3-删除元组"><a href="#4-3-3-删除元组" class="headerlink" title="- 4.3.3 删除元组"></a>- 4.3.3 删除元组</h3><p>对元组的元素删除是不被允许的，但可以使用 <code>del函数</code>，对整个元组进行删除。</p>
+<p>参考<strong>3.2.4 删除列表元素 （4）del 函数</strong> </p>
+<h3 id="4-3-4-统计元组"><a href="#4-3-4-统计元组" class="headerlink" title="- 4.3.4 统计元组"></a>- 4.3.4 统计元组</h3><p><strong>（1）<code>count()方法</code></strong></p>
+<p>与列表一致，参考 <strong>3.2.3 统计列表元素</strong></p>
+<p><strong>（2）<code>len 函数</code></strong></p>
+<p>通过<code>len()函数</code>进行统计。非常常见，此处不给出示例。</p>
+<p><strong>（3）<code>sum 函数</code></strong></p>
+<p>利用 <code>sum函数</code> 对数字元组求和。与列表类似，参考 <strong>3.3.2 对数字列表执行简单的统计计算</strong> 。</p>
+<h3 id="4-3-5-合并元组"><a href="#4-3-5-合并元组" class="headerlink" title="- 4.3.5 合并元组"></a>- 4.3.5 合并元组</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nums = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)</span><br><span class="line">words = (<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;e&#x27;</span>)</span><br><span class="line">mix = nums + words</span><br><span class="line">print(mix)</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;e&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3-6-转换元组"><a href="#4-3-6-转换元组" class="headerlink" title="- 4.3.6 转换元组"></a>- 4.3.6 转换元组</h3><p><strong>（1）列表转换为元组</strong></p>
+<p>使用 <code>tuple() 函数</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">list1 = [<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;peach&#x27;</span>, <span class="string">&#x27;watermelon&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>]</span><br><span class="line">l_to_t = <span class="built_in">tuple</span>(list1)</span><br><span class="line">print(l_to_t)</span><br><span class="line">print(<span class="built_in">type</span>(l_to_t))</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;peach&#x27;</span>, <span class="string">&#x27;watermelon&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>)</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> &#x27;<span class="title">tuple</span>&#x27;&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>（2）元组转换为列表</strong></p>
+<p>使用 <code>list() 函数</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">words = (<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;e&#x27;</span>)</span><br><span class="line">t_to_l = <span class="built_in">list</span>(words)</span><br><span class="line">print(t_to_l)</span><br><span class="line">print(<span class="built_in">type</span>(t_to_l))</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;e&#x27;</span>]</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> &#x27;<span class="title">list</span>&#x27;&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>元组和列表非常相似，甚至可以说元组是无法操作元素的列表。</p>
+<blockquote>
+<p>Update 2020-05-01：也许接下来要暂停 Python 博文编写一段时间了。</p>
 </blockquote>
 
   
@@ -523,7 +572,7 @@
               
             
               
-                <p>本文永久链接是：<a href=http://www.idealx.cn/python-basic-02/>http://www.idealx.cn/python-basic-02/</a></p>
+                <p>本文永久链接是：<a href=http://www.idealx.cn/python/basic-06.html>http://www.idealx.cn/python/basic-06.html</a></p>
               
             
           </blockquote>
@@ -540,10 +589,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-16T16:45:00+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-11T13:39:44+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年3月16日</p>
+    <p>更新于：2020年12月11日</p>
   </a>
 </div>
 
@@ -565,7 +614,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.idealx.cn/python-basic-02/&title=Re:从零开始的Python3学习笔记 02 - The best of ideallove&pics=https://cdn.idealx.cn/blogimage/python/python-icon.png&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.idealx.cn/python/basic-06.html&title=Re:从零开始的Python3学习笔记 06 - The best of ideallove&pics=https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/python/python-icon.png&summary="
           
           >
           
@@ -577,7 +626,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.idealx.cn/python-basic-02/&title=Re:从零开始的Python3学习笔记 02 - The best of ideallove&pics=https://cdn.idealx.cn/blogimage/python/python-icon.png&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.idealx.cn/python/basic-06.html&title=Re:从零开始的Python3学习笔记 06 - The best of ideallove&pics=https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/python/python-icon.png&summary="
           
           >
           
@@ -589,7 +638,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.idealx.cn/python-basic-02/&title=Re:从零开始的Python3学习笔记 02 - The best of ideallove&pics=https://cdn.idealx.cn/blogimage/python/python-icon.png&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.idealx.cn/python/basic-06.html&title=Re:从零开始的Python3学习笔记 06 - The best of ideallove&pics=https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/python/python-icon.png&summary="
           
           >
           
@@ -619,23 +668,23 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/python-basic-03/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Re:从零开始的Python3学习笔记 03</p>
-          <p class='content'>Python3 基础学习笔记（三） -- 条件分支与循环
+        <a class='prev' href='/cisco/02.html'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Re:从零开始的思科模拟器之DHCP配置</p>
+          <p class='content'>
+本文还需要优化，这里仅给出几个案例
 
-
-- 2 条件分支与循环Python 语言的条件分支、循环使得代码内容具有了逻辑判断以及处理能力，如判断某个条件是真的还是假的，然后去...</p>
+思科模拟器 之 DHCP服务配置
+由于网络的流行和广泛使用，在企业或学校都需要配置DHCP服务器，这样可以使无论在哪的电脑，只要连上局域网，就可以通过“自...</p>
         </a>
       
       
-        <a class='next' href='/python-basic-01/'>
-          <p class='title'>Re:从零开始的Python3学习笔记 01<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>
-update 2020-03-25：这是一个人类抗击病毒的历史时期才开始的笔记。这本笔记可能很长。
+        <a class='next' href='/cisco/01.html'>
+          <p class='title'>Re:从零开始的思科模拟器之交换机安全端口设置<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>思科模拟器 之 交换机安全端口设置
+注意：本文不太适合新手直接阅读，请配合思科官方文档观看。
 
-Python3 基础学习笔记（一） -- 快速上手：Python 基础知识1
 
-- 0 安...</p>
+本文使用的模拟器为 Cisco Packet Tracer 6.2 Student Versio...</p>
         </a>
       
     </div>
@@ -678,7 +727,7 @@ Python3 基础学习笔记（一） -- 快速上手：Python 基础知识1
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-%E5%87%BD%E6%95%B0"><span class="toc-text">- 1.5 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#pow-%E5%87%BD%E6%95%B0"><span class="toc-text">pow 函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#abs-%E5%87%BD%E6%95%B0"><span class="toc-text">abs 函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#round-%E5%87%BD%E6%95%B0"><span class="toc-text">round 函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#int-%E5%87%BD%E6%95%B0"><span class="toc-text">int 函数</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-%E6%A8%A1%E5%9D%97"><span class="toc-text">- 1.6 模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-1-import-%E5%91%BD%E4%BB%A4"><span class="toc-text">- 1.6.1 import 命令</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#sqrt-%E5%87%BD%E6%95%B0"><span class="toc-text">sqrt 函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-2-%E4%BD%BF%E7%94%A8%E5%8F%98%E9%87%8F%E5%BC%95%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-text">- 1.6.2 使用变量引用函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-3-%E5%A4%8D%E6%95%B0-%E5%92%8C-cmath"><span class="toc-text">- 1.6.3 复数 和 cmath</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-4-%E6%B5%B7%E9%BE%9F%E7%BB%98%E5%9B%BE%E6%B3%95"><span class="toc-text">- 1.6.4 海龟绘图法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-7-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-text">- 1.7 数据类型转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93-amp-amp-%E5%90%8E%E8%AE%B0"><span class="toc-text">小结 &amp;&amp; 后记</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%85%83%E7%BB%84"><span class="toc-text">- 4 元组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E5%85%83%E7%BB%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-text">- 4.1 元组基础知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-1-%E5%85%83%E7%BB%84%E5%9F%BA%E6%9C%AC%E5%AE%9A%E4%B9%89"><span class="toc-text">- 4.1.1 元组基本定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-2-%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0%E7%9A%84%E5%85%83%E7%BB%84%E5%AE%9A%E4%B9%89"><span class="toc-text">- 4.1.2 一个元素的元组定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-3-%E7%9C%81%E7%95%A5%E5%B0%8F%E6%8B%AC%E5%8F%B7%E7%9A%84%E5%85%83%E7%BB%84%E5%AE%9A%E4%B9%89"><span class="toc-text">- 4.1.3 省略小括号的元组定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E5%85%83%E7%BB%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text">- 4.2 元组基本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E5%85%83%E7%BB%84%E6%93%8D%E4%BD%9C%E5%AE%9E%E4%BE%8B"><span class="toc-text">- 4.3 元组操作实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-1-%E5%BB%BA%E7%AB%8B%E5%85%83%E7%BB%84"><span class="toc-text">- 4.3.1 建立元组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-2-%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0"><span class="toc-text">- 4.3.2 查找元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-3-%E5%88%A0%E9%99%A4%E5%85%83%E7%BB%84"><span class="toc-text">- 4.3.3 删除元组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-4-%E7%BB%9F%E8%AE%A1%E5%85%83%E7%BB%84"><span class="toc-text">- 4.3.4 统计元组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-5-%E5%90%88%E5%B9%B6%E5%85%83%E7%BB%84"><span class="toc-text">- 4.3.5 合并元组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-6-%E8%BD%AC%E6%8D%A2%E5%85%83%E7%BB%84"><span class="toc-text">- 4.3.6 转换元组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-text">小结</span></a></li></ol>
     </div>
   </section>
 
@@ -698,13 +747,13 @@ Python3 基础学习笔记（一） -- 快速上手：Python 基础知识1
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="Re:从零开始的Python3学习笔记 02";
+  pdata.postTitle="Re:从零开始的Python3学习笔记 06";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.add("show");
+  l_header.classList.remove("show");
   
 </script>
 

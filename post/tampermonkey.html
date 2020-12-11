@@ -19,13 +19,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>Re:从零开始的思科模拟器之交换机安全端口设置 - The best of ideallove</title>
+  <title>Re:从零开始优雅地挂网课 - The best of ideallove</title>
   
-    <meta name="keywords" content="思科模拟器,cisco,网络基础">
+    <meta name="keywords" content="正经,科学,教程,脚本,Tampermonkey">
   
 
   
-    <meta name="description" content="思科模拟器 Cisco Packet Tracer 之交换机安全端口设置。本文给出了端口绑定mac地址和限制最大连接数的两个案例。请配合思科官方文档食用。<br />我真的下饭。">
+    <meta name="description" content="<img src='https://cdn.idealx.cn/blogimage/03/blog-03-cover.jfif' height=65% width=65%><br/><s>以后再也别说我开挂了！</s>本篇文章是整理 Tampermonkey 脚本管理器的安装方法。什么是脚本？Tampermonkey是什么？博客不过是整理分类自己学到的东西，杂货铺实锤。大家按需求食用即可。">
   
 
   <!-- feed -->
@@ -60,7 +60,7 @@
 <body>
   
 
-<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -311,7 +311,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper post dock' style="display: none;">
+        <div id="half" class='cover-wrapper post dock' style="display: ;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
           
@@ -362,13 +362,9 @@
   <div class="article-meta" id="top">
     
     
-      <a title='Re:从零开始的思科模拟器之交换机安全端口设置' href='/cisco-01/'>
-        <img class='thumbnail' src='https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco-01/thumbnail.jpg'>
-      </a>
-    
     
       <h1 class="title">
-        Re:从零开始的思科模拟器之交换机安全端口设置
+        Re:从零开始优雅地挂网课
       </h1>
       <div class='new-meta-box'>
         
@@ -388,7 +384,7 @@
   <div class='new-meta-item category'>
     <a class='notlink'>
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="/categories/%E7%BD%91%E7%BB%9C/">网络</a><span class="sep"></span><a class="category-link" href="/categories/%E7%BD%91%E7%BB%9C/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">基础学习</a>
+      <a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0%E6%9C%AC/">笔记本</a><span class="sep"></span><a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0%E6%9C%AC/%E6%95%99%E7%A8%8B/">教程</a>
     </a>
   </div>
 
@@ -399,7 +395,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年4月29日</p>
+    <p>发布于：2020年3月10日</p>
   </a>
 </div>
 
@@ -416,66 +412,83 @@
 
 
   
-  <h3 id="思科模拟器-之-交换机安全端口设置"><a href="#思科模拟器-之-交换机安全端口设置" class="headerlink" title="思科模拟器 之 交换机安全端口设置"></a>思科模拟器 之 交换机安全端口设置</h3><blockquote>
-<p>注意：本文不太适合新手直接阅读，请配合思科官方文档观看。</p>
+  <blockquote>
+<p>这是一篇傻瓜教程，大家按需求食用即可。</p>
+</blockquote>
+<p><del>以后再也别说我开挂了！</del>本篇文章是整理 <a target="_blank" rel="noopener" href="http://www.tampermonkey.net/">Tampermonkey</a> 脚本管理器的安装方法。</p>
+<h3 id="什么是-脚本-？"><a href="#什么是-脚本-？" class="headerlink" title="什么是 脚本 ？"></a>什么是 脚本 ？</h3><blockquote>
+<p><strong>脚本</strong>（Script）是一种批处理文件的延伸，是一种纯文本保存的程序，一般来说的计算机脚本程序是确定的一系列控制计算机进行运算操作动作的组合，在其中可以实现一定的逻辑分支等。  </p>
+<p>—-百度百科=脚本</p>
 </blockquote>
 <blockquote>
-<p>本文使用的模拟器为 Cisco Packet Tracer 6.2 Student Version</p>
+<p><strong>脚本语言</strong>（Scripting language）是为了缩短传统的“编写、编译、链接、运行”（edit-compile-link-run）过程而创建的计算机编程语言。早期的脚本语言经常被称为批处理语言或工作控制语言。一个脚本通常是解释运行而非编译。脚本语言通常都有简单、易学、易用的特性，目的就是希望能让程序员快速完成程序的编写工作。 </p>
+<p>—-维基百科=脚本语言</p>
 </blockquote>
 <blockquote>
-<p>本文给出交换机端口安全配置的两个示例</p>
+<p>JavaScript 和 Python 等都是常见的脚本语言。</p>
 </blockquote>
-<h3 id="一、-端口绑定MAC地址"><a href="#一、-端口绑定MAC地址" class="headerlink" title="一、 端口绑定MAC地址"></a><strong>一、</strong> 端口绑定MAC地址</h3><p>按照拓扑图连接，配置两台PC的IP地址。</p>
-<p>如图所示：</p>
-<img src='https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco-01/01.jpg' height=50% width=50%>
+<h3 id="Tampermonkey-是什么？"><a href="#Tampermonkey-是什么？" class="headerlink" title="Tampermonkey 是什么？"></a>Tampermonkey 是什么？</h3><p><a target="_blank" rel="noopener" href="http://www.tampermonkey.net/"><strong>Tampermonkey</strong></a> 是一款免费的浏览器扩展和最为流行的用户脚本管理器，它适用于 <a target="_blank" rel="noopener" href="http://www.tampermonkey.net/#"><strong>Chrome</strong></a>, <a target="_blank" rel="noopener" href="http://www.tampermonkey.net/#"><strong>Microsoft Edge</strong></a>, <a target="_blank" rel="noopener" href="http://www.tampermonkey.net/#"><strong>Safari</strong></a>, <a target="_blank" rel="noopener" href="http://www.tampermonkey.net/#"><strong>Opera Next</strong></a>, 和 <a target="_blank" rel="noopener" href="http://www.tampermonkey.net/#"><strong>Firefox</strong></a>。</p>
+<p>并且，你可以自己编写自己的脚本。它提供了很多功能，详情参照它的官方文档。</p>
+<blockquote>
+<p>Tampermonkey 在 Chromium 内核的兼容性非常好，这意味着绝大部分国产浏览器都可以安装。</p>
+<p>它甚至支持 Android 浏览器。</p>
+</blockquote>
+<p>简单来说，Tampermonkey 可以让我们便捷地使用全世界数以百万计的脚本。接下来介绍两种非常简单的安装方式。</p>
+<h4 id="安装方式一：官方网站直接安装"><a href="#安装方式一：官方网站直接安装" class="headerlink" title="安装方式一：官方网站直接安装"></a>安装方式一：官方网站直接安装</h4><blockquote>
+<p>提示：本方法需要科学上网/魔法上网。其实从这一步也会跳转到第二种方式，只是担心下载链接的失效（Edge 的就失效了）。</p>
+</blockquote>
+<p>1、打开 <a target="_blank" rel="noopener" href="http://www.tampermonkey.net/">Tampermonkey</a> 的官网：<a target="_blank" rel="noopener" href="http://www.tampermonkey.net/">http://www.tampermonkey.net/</a> </p>
+<fancybox>
+<img src='https://cdn.idealx.cn/blogimage/03/blog-03-01.png'>
+</fancybox>
 
-<p>PC 0的IP地址为：192.168.1.2/24</p>
-<p>PC 1的IP地址为：192.168.1.3/24</p>
-<p>PC 1的MAC地址为：0002.164D.DE81</p>
-<p><strong>1、</strong> <strong>绑定一个非 PC 1的MAC地址，检查是否可以ping通PC 0。</strong></p>
-<p>配置交换机：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Switch&gt;en</span><br><span class="line">Switch#</span><br><span class="line">Switch#conf t</span><br><span class="line">Enter configuration commands, one per line. End with CNTL&#x2F;Z.</span><br><span class="line">Switch(config)#hostname SW1</span><br><span class="line">SW1(config)#int range f0&#x2F;1-2</span><br><span class="line">SW1(config-if-range)#switchport mode access</span><br><span class="line">SW1(config-if-range)#switchport port-security maximum 1</span><br><span class="line">SW1(config-if-range)#switchport port-security violation protect</span><br><span class="line">SW1(config-if-range)#int f0&#x2F;10</span><br><span class="line">SW1(config-if)#switchport port-security mac-address 0002.164d.de00</span><br></pre></td></tr></table></figure>
+<p>2、选择你的浏览器，单击下载，按照正常浏览器插件安装流程就可以了。</p>
+<h4 id="安装方式二：通过浏览器商店"><a href="#安装方式二：通过浏览器商店" class="headerlink" title="安装方式二：通过浏览器商店"></a>安装方式二：通过浏览器商店</h4><p>1、选择一款支持插件的浏览器，此处以 Chromium 内核的 Microsoft Edge 80 为例。</p>
+<blockquote>
+<p>如果用 Chrome 也是一样的道理，但是需要魔法。</p>
+</blockquote>
+<p>2、打开浏览器的 “拓展” 界面</p>
+<fancybox>
+<img src='https://cdn.idealx.cn/blogimage/03/blog-03-02.png'>
+</fancybox>
 
-<p>PC 1 ping PC 0 测试：无法ping通</p>
-<img src='https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco-01/02.jpg' height=50% width=50%>
+<p>单击 “从 Microsoft Store 获取拓展”，进入微软的插件商店。</p>
+<blockquote>
+<p>当然你可以下载 crx ，然后使用开发人员模式安装。</p>
+</blockquote>
+<p>3、搜索“Tempermonkey”，找到正版的插件，单击“获取”。然后按照插件安装流程，单击弹出的“添加插件”。</p>
+<fancybox>
+<img src='https://cdn.idealx.cn/blogimage/03/blog-03-03.png'>
+</fancybox>
 
+<p>4、然后就安装好了。</p>
+<blockquote>
+<p>就是这么快，但是就是要水字数。</p>
+</blockquote>
+<h4 id="用它！"><a href="#用它！" class="headerlink" title="用它！"></a>用它！</h4><p>单击浏览器右上部它的猴图标。</p>
+<fancybox>
+<img src='https://cdn.idealx.cn/blogimage/03/blog-03-04.png'>
+</fancybox>
 
-<p><strong>2、</strong> <strong>修改交换机配置，将PC 1的MAC地址绑定，再次测试：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SW1(config)#int f0&#x2F;2</span><br><span class="line">SW1(config-if)#no switchport port-security mac-address 0002.164d.de00</span><br><span class="line">SW1(config-if)#switchport port-security mac-address 0002.164d.de81</span><br></pre></td></tr></table></figure>
+<p>单击 “获取新脚本” 。</p>
+<blockquote>
+<p>获取新脚本：用别人的</p>
+<p>添加新脚本：自己写</p>
+</blockquote>
+<fancybox>
+<img src='https://cdn.idealx.cn/blogimage/03/blog-03-05.png'>
+</fancybox>
 
-<img src='https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco-01/03.jpg' height=50% width=50%>
-
-<p>Ping 通。</p>
-<p>实验结果正确。</p>
-<h3 id="二、限制最大连接数为1"><a href="#二、限制最大连接数为1" class="headerlink" title="二、限制最大连接数为1"></a>二、限制最大连接数为1</h3><p><strong>按照拓扑图连接，并配置对应IP：</strong></p>
-<img src='https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco-01/04.jpg' height=50% width=50%>
-
-<p>配置交换机SW2：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Switch&gt;en</span><br><span class="line">Switch#conf t</span><br><span class="line">Enter configuration commands, one per line. End with CNTL&#x2F;Z.</span><br><span class="line">Switch(config)#hostname SW2</span><br><span class="line">SW2(config)#int range f0&#x2F;11-14</span><br><span class="line">SW2(config-if-range)#switchport mode access </span><br><span class="line">SW2(config-if-range)#switchport port-security </span><br><span class="line">SW2(config-if-range)#switchport port-security maximum 2</span><br><span class="line">SW2(config-if-range)#switchport port-security violation protect </span><br></pre></td></tr></table></figure>
-
-<p> 首先配置最大连接数为2，测试是否能ping通：</p>
-<img src='https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco-01/05.jpg' height=50% width=50%>
-
-<p>仅能ping通1个，猜测交换机也算一台设备</p>
-<p>修改交换机配置，设maximum为3：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SW2(config)#int range f0&#x2F;11-14</span><br><span class="line">SW2(config-if-range)#switchport port-security maximum 3</span><br></pre></td></tr></table></figure>
-
-<img src='https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco-01/06.jpg' height=50% width=50%>
-
-<p>全ping通。</p>
-<p>然后限制maximum为1，修改交换机SW2的配置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SW2(config)#int range f0&#x2F;11-14</span><br><span class="line">SW2(config-if-range)#switchport port-security maximum 1</span><br></pre></td></tr></table></figure>
-
-<p>注意：此时会报出maximum小于mac地址的错误，此时：</p>
-<p>断开连接的f0/14的线缆，</p>
-<p>然后重新配置SW2：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SW2(config-if-range)#no switchport port-security violation protect</span><br><span class="line">SW2(config-if-range)#no switchport port-security maximum 3</span><br><span class="line">SW2(config-if-range)#no switchport port-security </span><br><span class="line">SW2(config-if-range)#switchport port-security</span><br><span class="line">SW2(config-if-range)#switchport port-security maximum 1</span><br><span class="line">SW2(config-if-range)#switchport port-security violation protect</span><br></pre></td></tr></table></figure>
-
-<p> 然后进行ping测试：</p>
-<img src='https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco-01/07.jpg' height=50% width=50%>
-
-<p>测试成功，全不通。</p>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>别说了，XX思科模拟器。</p>
+<p>然后选择一个脚本提供商。（建议 GreasyFork ）</p>
+<p>打开之后按照脚本提供商的文档操作，搜索+安装+使用，就不多说了。</p>
+<blockquote>
+<p>你可以随时在 Tampermonkey 脚本管理器中修改所有下载的脚本以适合自己使用。并且可以随时关闭使用的脚本以在特定时间使用。</p>
+</blockquote>
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>博客不过是整理分类自己学到的东西，杂货铺实锤。</p>
+<p>大家按需求食用即可。</p>
+<blockquote>
+<p>封面图片取自互联网。</p>
+</blockquote>
 
   
   
@@ -493,7 +506,7 @@
               
             
               
-                <p>本文永久链接是：<a href=http://www.idealx.cn/cisco-01/>http://www.idealx.cn/cisco-01/</a></p>
+                <p>本文永久链接是：<a href=http://www.idealx.cn/post/tampermonkey.html>http://www.idealx.cn/post/tampermonkey.html</a></p>
               
             
           </blockquote>
@@ -510,10 +523,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-11T13:34:10+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-18T18:26:52+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年12月11日</p>
+    <p>更新于：2020年3月18日</p>
   </a>
 </div>
 
@@ -522,7 +535,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%80%9D%E7%A7%91%E6%A8%A1%E6%8B%9F%E5%99%A8/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>思科模拟器</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/cisco/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>cisco</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>网络基础</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%AD%A3%E7%BB%8F/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>正经</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%A7%91%E5%AD%A6/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>科学</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%99%E7%A8%8B/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>教程</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E8%84%9A%E6%9C%AC/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>脚本</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Tampermonkey/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Tampermonkey</p></a></div>
 
 
         
@@ -535,7 +548,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.idealx.cn/cisco-01/&title=Re:从零开始的思科模拟器之交换机安全端口设置 - The best of ideallove&pics=https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco-01/thumbnail.jpg&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.idealx.cn/post/tampermonkey.html&title=Re:从零开始优雅地挂网课 - The best of ideallove&summary="
           
           >
           
@@ -547,7 +560,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.idealx.cn/cisco-01/&title=Re:从零开始的思科模拟器之交换机安全端口设置 - The best of ideallove&pics=https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco-01/thumbnail.jpg&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.idealx.cn/post/tampermonkey.html&title=Re:从零开始优雅地挂网课 - The best of ideallove&summary="
           
           >
           
@@ -559,7 +572,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.idealx.cn/cisco-01/&title=Re:从零开始的思科模拟器之交换机安全端口设置 - The best of ideallove&pics=https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco-01/thumbnail.jpg&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.idealx.cn/post/tampermonkey.html&title=Re:从零开始优雅地挂网课 - The best of ideallove&summary="
           
           >
           
@@ -589,25 +602,15 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/python-basic-06/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Re:从零开始的Python3学习笔记 06</p>
-          <p class='content'>Python3 基础学习笔记（六） --  元组
-
-
-- 4 元组元组（Tuple）类似列表，与列表的主要区别有以下两点。
-（1）元组不能对其元素进行变动，而列表允许。
-（2）元组用小括号表示(...</p>
+        <a class='prev' href='/post/cmd-easy-beautify.html'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Re:从零开始让CMD控制台优雅一点点</p>
+          <p class='content'>这是一款相当漂亮且适合编程的字体。他们是这么说的…这是一款 Microsoft Yahei 和 Consolas 的混合字体，很适合在 Windows 和 Linux 平台下编程使用。字体名字叫...</p>
         </a>
       
       
-        <a class='next' href='/python-basic-05/'>
-          <p class='title'>Re:从零开始的Python3学习笔记 05<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>Python3 基础学习笔记（五） --  列表2
-
-
-- 3.2.6 排序列表元素列表元素提供了 sort()方法 对列表进行排序。
-
-排序（Sort），按照次序分为 增序 和 减序（又叫升序...</p>
+        <a class='next' href='/post/hexo-basic.html'>
+          <p class='title'>Re:从零搭建Hexo博客并部署到GitHub或云服务器上<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>前言心血来潮买了云主机，浪费了几个月都没用，然后就学着搭建博客，对比了一下 WordPress 和 Hexo 之后，随性选择了以 Hexo 为框架搭建博客平台。经过了几次的从零开始，遇到了各种各...</p>
         </a>
       
     </div>
@@ -650,7 +653,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E7%A7%91%E6%A8%A1%E6%8B%9F%E5%99%A8-%E4%B9%8B-%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%AE%89%E5%85%A8%E7%AB%AF%E5%8F%A3%E8%AE%BE%E7%BD%AE"><span class="toc-text">思科模拟器 之 交换机安全端口设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81-%E7%AB%AF%E5%8F%A3%E7%BB%91%E5%AE%9AMAC%E5%9C%B0%E5%9D%80"><span class="toc-text">一、 端口绑定MAC地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E9%99%90%E5%88%B6%E6%9C%80%E5%A4%A7%E8%BF%9E%E6%8E%A5%E6%95%B0%E4%B8%BA1"><span class="toc-text">二、限制最大连接数为1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-text">小结</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-%E8%84%9A%E6%9C%AC-%EF%BC%9F"><span class="toc-text">什么是 脚本 ？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tampermonkey-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">Tampermonkey 是什么？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F%E4%B8%80%EF%BC%9A%E5%AE%98%E6%96%B9%E7%BD%91%E7%AB%99%E7%9B%B4%E6%8E%A5%E5%AE%89%E8%A3%85"><span class="toc-text">安装方式一：官方网站直接安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F%E4%BA%8C%EF%BC%9A%E9%80%9A%E8%BF%87%E6%B5%8F%E8%A7%88%E5%99%A8%E5%95%86%E5%BA%97"><span class="toc-text">安装方式二：通过浏览器商店</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E5%AE%83%EF%BC%81"><span class="toc-text">用它！</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-text">后记</span></a></li></ol>
     </div>
   </section>
 
@@ -670,13 +673,13 @@
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="Re:从零开始的思科模拟器之交换机安全端口设置";
+  pdata.postTitle="Re:从零开始优雅地挂网课";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.add("show");
+  l_header.classList.remove("show");
   
 </script>
 

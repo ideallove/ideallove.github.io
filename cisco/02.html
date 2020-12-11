@@ -19,13 +19,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>Re:从零开始的Python3学习笔记 05 - The best of ideallove</title>
+  <title>Re:从零开始的思科模拟器之DHCP配置 - The best of ideallove</title>
   
-    <meta name="keywords" content="python,语言基础">
+    <meta name="keywords" content="思科模拟器,cisco,网络基础">
   
 
   
-    <meta name="description" content="<blockquote><h3><center>Python3 基础学习笔记（五）列表2</center></h3></blockquote><br/>">
+    <meta name="description" content="思科模拟器 Cisco Packet Tracer 之 DHCP服务配置。本文给出了配置DHCP的案例。请配合思科官方文档食用。<br />我真的下饭*2。">
   
 
   <!-- feed -->
@@ -60,7 +60,7 @@
 <body>
   
 
-<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -311,7 +311,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper post dock' style="display: none;">
+        <div id="half" class='cover-wrapper post dock' style="display: ;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
           
@@ -362,13 +362,13 @@
   <div class="article-meta" id="top">
     
     
-      <a title='Re:从零开始的Python3学习笔记 05' href='/python-basic-05/'>
-        <img class='thumbnail' src='https://cdn.idealx.cn/blogimage/python/python-icon.png'>
+      <a title='Re:从零开始的思科模拟器之DHCP配置' href='/cisco/02.html'>
+        <img class='thumbnail' src='https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/thumbnail.jpg'>
       </a>
     
     
       <h1 class="title">
-        Re:从零开始的Python3学习笔记 05
+        Re:从零开始的思科模拟器之DHCP配置
       </h1>
       <div class='new-meta-box'>
         
@@ -388,7 +388,7 @@
   <div class='new-meta-item category'>
     <a class='notlink'>
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="/categories/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Python学习笔记</a><span class="sep"></span><a class="category-link" href="/categories/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">基础学习</a>
+      <a class="category-link" href="/categories/%E7%BD%91%E7%BB%9C/">网络</a><span class="sep"></span><a class="category-link" href="/categories/%E7%BD%91%E7%BB%9C/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">基础学习</a>
     </a>
   </div>
 
@@ -399,7 +399,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年4月27日</p>
+    <p>发布于：2020年5月7日</p>
   </a>
 </div>
 
@@ -416,80 +416,57 @@
 
 
   
-  <blockquote><center>Python3 基础学习笔记（五） --  列表2</center></blockquote>
-
-<hr>
-<h3 id="3-2-6-排序列表元素"><a href="#3-2-6-排序列表元素" class="headerlink" title="- 3.2.6 排序列表元素"></a>- 3.2.6 排序列表元素</h3><p>列表元素提供了 <strong><code>sort()</code>方法</strong> 对列表进行排序。</p>
-<blockquote>
-<p>排序（Sort），按照次序分为 增序 和 减序（又叫升序、降序）；增序一般根据 ASCII 码由小到大对字符、数字进行排序，减序则相反。</p>
+  <blockquote>
+<p>本文还需要优化，这里仅给出几个案例</p>
 </blockquote>
-<p>sort() 方法使用格式为 A.sort(key=none,reverse=False) .</p>
-<blockquote>
-<p>A 为列表对象</p>
-<p>key 为可选参数，默认值为 none，用于指定在做比较之前，调用何种函数对列表元素进行处理，比如 key=str.lower。</p>
-<p>reverse 为可选参数，默认为增序，使用reverse=True做减序处理。</p>
+<h3 id="思科模拟器-之-DHCP服务配置"><a href="#思科模拟器-之-DHCP服务配置" class="headerlink" title="思科模拟器 之 DHCP服务配置"></a>思科模拟器 之 DHCP服务配置</h3><blockquote>
+<p>由于网络的流行和广泛使用，在企业或学校都需要配置DHCP服务器，这样可以使无论在哪的电脑，只要连上局域网，就可以通过<strong>“自动获取IP地址“</strong>方式来自动获取IP地址网关，这样可以节约网络成本，网络资源。</p>
 </blockquote>
-<p>示例：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">fruits = [<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;pear&#x27;</span>, <span class="string">&#x27;peach&#x27;</span>, <span class="string">&#x27;watermelon&#x27;</span>]</span><br><span class="line">fruits_1 = fruits.copy()</span><br><span class="line">fruits_2 = fruits.copy()</span><br><span class="line">fruits_1.sort()</span><br><span class="line">fruits_2.sort(reverse=<span class="literal">True</span>)</span><br><span class="line">print(fruits_1)</span><br><span class="line">print(fruits_2)</span><br></pre></td></tr></table></figure>
-
-<p>输出结果：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;peach&#x27;</span>, <span class="string">&#x27;pear&#x27;</span>, <span class="string">&#x27;watermelon&#x27;</span>]</span><br><span class="line">[<span class="string">&#x27;watermelon&#x27;</span>, <span class="string">&#x27;pear&#x27;</span>, <span class="string">&#x27;peach&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;apple&#x27;</span>]</span><br></pre></td></tr></table></figure>
-
 <blockquote>
-<p>如果不想改变原有列表，则可以采用 <strong>sorted() 函数</strong>，对列表对象直接排序。sorted 函数也可用于元组、字典的排序。</p>
+<p>注意：本文不太适合新手直接阅读，请配合思科官方文档观看。</p>
 </blockquote>
-<h3 id="3-2-7-复制列表"><a href="#3-2-7-复制列表" class="headerlink" title="- 3.2.7 复制列表"></a>- 3.2.7 复制列表</h3><p><strong>copy() 方法</strong>使用格式为 A.copy() 。通过 copy() 方法实现列表在内存里的复制（深拷贝）。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fruits = [<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;pear&#x27;</span>, <span class="string">&#x27;peach&#x27;</span>, <span class="string">&#x27;watermelon&#x27;</span>]</span><br><span class="line">fruits_1 = fruits.copy()</span><br><span class="line">print(<span class="built_in">id</span>(fruits))		<span class="comment"># 打印列表的内存地址</span></span><br><span class="line">print(<span class="built_in">id</span>(fruits_1))</span><br></pre></td></tr></table></figure>
-
-<p>输出结果：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3044623542152</span></span><br><span class="line"><span class="number">3044632643272</span></span><br></pre></td></tr></table></figure>
-
 <blockquote>
-<p>如果是使用赋值号，则内存地址不变，是浅拷贝。</p>
+<p>本文使用的模拟器为 Cisco Packet Tracer 6.2 Student Version</p>
 </blockquote>
-<h3 id="3-2-8-统计列表元素"><a href="#3-2-8-统计列表元素" class="headerlink" title="- 3.2.8 统计列表元素"></a>- 3.2.8 统计列表元素</h3><p><strong>count() 方法</strong> 使用格式为 A.count(str) 。其中 str 为需要统计的元素。使用该方法实现对列表指定元素个数的统计。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fruits = [<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;pear&#x27;</span>, <span class="string">&#x27;peach&#x27;</span>, <span class="string">&#x27;watermelon&#x27;</span>, <span class="string">&#x27;peach&#x27;</span>]</span><br><span class="line">x = fruits.count(<span class="string">&#x27;peach&#x27;</span>)</span><br><span class="line">print(x)</span><br></pre></td></tr></table></figure>
+<h3 id="一、基于路由器和服务器的DHCP配置（无VLAN划分）"><a href="#一、基于路由器和服务器的DHCP配置（无VLAN划分）" class="headerlink" title="一、基于路由器和服务器的DHCP配置（无VLAN划分）"></a>一、基于路由器和服务器的DHCP配置（无VLAN划分）</h3><p>拓扑图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/cisco-02/01.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/cisco-02/01.png" srcset="data:image/png;base64,666"></p>
+<p>配置路由器Router0：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Router&gt;en</span><br><span class="line">Router#conf t</span><br><span class="line">Router(config)#hostname R1</span><br><span class="line">R1(config)#int f0&#x2F;0		&#x2F;&#x2F;进入端口f0&#x2F;0</span><br><span class="line">R1(config-if)#ip address 192.168.1.1 255.255.255.0	&#x2F;&#x2F;配置IP</span><br><span class="line">R1(config-if)#no shutdown	&#x2F;&#x2F;打开端口</span><br><span class="line">R1(config-if)#int f0&#x2F;1</span><br><span class="line">R1(config-if)#ip address 192.168.2.1 255.255.255.0</span><br><span class="line">R1(config-if)#ip helper-address 192.168.1.2		&#x2F;&#x2F;使该端口上的IP使用DHCP分配</span><br><span class="line">R1(config-if)#no shutdown</span><br></pre></td></tr></table></figure>
 
-<p>输出结果：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>DHCP-Server 的 IP配置：<br><img src="https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/cisco-02/02.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/cisco-02/02.png" srcset="data:image/png;base64,666"></p>
+<p>在虚拟服务器的**<code>Service选项卡</code><strong>中选择</strong>DHCP 服务**：<br>修改配置：<br>默认网关：为需要DHCP的网段<br>设置一个DNS服务器<br>开始IP地址：可以自由选择<br>设置子网掩码：这里以 /24 的子网掩码为例<br>最大连接数：以 /24 的子网掩码为例，255-2=253 个地址留给主机<br>TFTP服务器：不需要使用，则无需修改</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/cisco-02/03.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/cisco-02/03.png" srcset="data:image/png;base64,666"></p>
+<p>PC运行结果：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/cisco-02/04.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/cisco-02/04.png" srcset="data:image/png;base64,666"><br><img src="https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/cisco-02/05.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/cisco-02/05.png" srcset="data:image/png;base64,666"></p>
+<h3 id="二、基于单臂路由和服务器的DHCP配置（划分VLAN）"><a href="#二、基于单臂路由和服务器的DHCP配置（划分VLAN）" class="headerlink" title="二、基于单臂路由和服务器的DHCP配置（划分VLAN）"></a>二、基于单臂路由和服务器的DHCP配置（划分VLAN）</h3><p>拓扑图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/cisco-02/06.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/cisco-02/06.png" srcset="data:image/png;base64,666"></p>
+<p>二层交换机配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Switch&gt;en</span><br><span class="line">Switch#conf t</span><br><span class="line">Enter configuration commands, one per line. End with CNTL&#x2F;Z.</span><br><span class="line">Switch(config)#hostname SW1</span><br><span class="line">SW1(config)#vlan 10</span><br><span class="line">SW1(config-vlan)#vlan 20</span><br><span class="line">SW1(config-vlan)#int f0&#x2F;1</span><br><span class="line">SW1(config-if)#switchport mode access</span><br><span class="line">SW1(config-if)#switchport access vlan 10</span><br><span class="line">SW1(config-if)#int f0&#x2F;2</span><br><span class="line">SW1(config-if)#switchport mode access</span><br><span class="line">SW1(config-if)#switchport access vlan 20</span><br><span class="line">SW1(config-if)#int f0&#x2F;24</span><br><span class="line">SW1(config-if)#switchport mode trunk</span><br></pre></td></tr></table></figure>
 
-<h3 id="3-2-9-反向列表元素"><a href="#3-2-9-反向列表元素" class="headerlink" title="- 3.2.9 反向列表元素"></a>- 3.2.9 反向列表元素</h3><p><strong>reserve() 方法</strong> 使用格式为 A.reverse() 。通过该方法可以实现对列表元素的永久反向。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">text = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">print(text)</span><br><span class="line">text.reverse()</span><br><span class="line">print(text)</span><br></pre></td></tr></table></figure>
+<p>路由器配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Router&gt;en</span><br><span class="line">Router#conf t</span><br><span class="line">Router(config)#int f0&#x2F;0</span><br><span class="line">Router(config-if)#no shutdown	&#x2F;&#x2F;打开端口</span><br><span class="line">Router(config-if)#int f0&#x2F;0.1	&#x2F;&#x2F;进入子端口</span><br><span class="line">Router(config-subif)#encapsulation dot1Q 10	&#x2F;&#x2F;封装数据</span><br><span class="line">Router(config-subif)#ip address 192.168.1.1 255.255.255.0	&#x2F;&#x2F;设置IP</span><br><span class="line">Router(config-subif)#int f0&#x2F;0.2	&#x2F;&#x2F;同上</span><br><span class="line">Router(config-subif)#encapsulation dot1Q 20	&#x2F;&#x2F;封装数据</span><br><span class="line">Router(config-subif)#ip address 192.168.2.1 255.255.255.0</span><br></pre></td></tr></table></figure>
 
-<p>输出结果：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">[<span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+<p>接着，配置服务器侧的端口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Router(config)#int f0&#x2F;1</span><br><span class="line">Router(config-if)#no shutdown</span><br><span class="line">Router(config-if)#ip address 192.168.3.1 255.255.255.0</span><br><span class="line">Router(config-if)#int f0&#x2F;0.1	&#x2F;&#x2F;进入刚刚的子端口</span><br><span class="line">Router(config-subif)#ip helper-address 192.168.3.2	&#x2F;&#x2F;配置DHCP</span><br><span class="line">Router(config-subif)#int f0&#x2F;0.2	&#x2F;&#x2F;同上</span><br><span class="line">Router(config-subif)#ip helper-address 192.168.3.2</span><br></pre></td></tr></table></figure>
+<p>服务器配置：<br><img src="https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/cisco-02/07.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/cisco-02/07.png" srcset="data:image/png;base64,666"><br><img src="https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/cisco-02/08.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/cisco-02/08.png" srcset="data:image/png;base64,666"><br><img src="https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/cisco-02/09.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/cisco-02/09.png" srcset="data:image/png;base64,666"></p>
+<p>PC获取DHCP结果：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/cisco-02/10.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/cisco-02/10.png" srcset="data:image/png;base64,666"><br><img src="https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/cisco-02/11.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/cisco-02/11.png" srcset="data:image/png;base64,666"></p>
+<h3 id="三、基于三层交换机和路由器的DHCP配置（划分VLAN）"><a href="#三、基于三层交换机和路由器的DHCP配置（划分VLAN）" class="headerlink" title="三、基于三层交换机和路由器的DHCP配置（划分VLAN）"></a>三、基于三层交换机和路由器的DHCP配置（划分VLAN）</h3><p>拓扑图：<br><img src="https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/cisco-02/12.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/cisco-02/12.png" srcset="data:image/png;base64,666"></p>
+<p>配置二层交换机：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Switch&gt;en</span><br><span class="line">Switch#conf t</span><br><span class="line">Switch(config)#hostname SW1</span><br><span class="line">SW1(config)#vlan 10</span><br><span class="line">SW1(config-vlan)#vlan 20</span><br><span class="line">SW1(config-vlan)#int f0&#x2F;1</span><br><span class="line">SW1(config-if)#switchport mode access</span><br><span class="line">SW1(config-if)#switchport access vlan 10</span><br><span class="line">SW1(config-if)#int f0&#x2F;2</span><br><span class="line">SW1(config-if)#switchport mode access</span><br><span class="line">SW1(config-if)#switchport access vlan 20</span><br><span class="line">SW1(config-if)#int f0&#x2F;24</span><br><span class="line">SW1(config-if)#switchport mode trunk</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>列表做反向操作前后，列表对应的地址不变。</p>
-</blockquote>
-<h3 id="3-2-10-列表解析"><a href="#3-2-10-列表解析" class="headerlink" title="- 3.2.10 列表解析"></a>- 3.2.10 列表解析</h3><p>Python 语言还为列表提供了基于列表本身的元素操作语句解析功能。</p>
-<blockquote>
-<p>语法如下：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[expression for iter<span class="emphasis">_val in iterable]</span></span><br><span class="line"><span class="emphasis">[expression for iter_</span>val in iterable if cond<span class="emphasis">_expr]</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>示例：对集合 0~10 中，除了 0 外，其他元素做平方运算。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">squares = [i ** <span class="number">2</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">11</span>) <span class="keyword">if</span> i &gt; <span class="number">0</span>]</span><br><span class="line">print(squares)</span><br></pre></td></tr></table></figure>
+<p>配置三层交换机：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Switch&gt;</span><br><span class="line">Switch&gt;en</span><br><span class="line">Switch#conf t</span><br><span class="line">Switch(config)#hostname MSW1</span><br><span class="line">MSW1(config)#vlan 10</span><br><span class="line">MSW1(config-vlan)#vlan 20</span><br><span class="line">MSW1(config-vlan)#int vlan 10</span><br><span class="line">MSW1(config-if)#ip address 192.168.1.1 255.255.255.0</span><br><span class="line">MSW1(config-if)#int vlan 20</span><br><span class="line">MSW1(config-if)#ip address 192.168.2.1 255.255.255.0</span><br><span class="line">MSW1(config-if)#int f0&#x2F;1</span><br><span class="line">MSW1(config-if)#no switchport</span><br><span class="line">MSW1(config-if)#ip address 192.168.3.1 255.255.255.0</span><br><span class="line">MSW1(config-if)#ex</span><br><span class="line">MSW1(config)#ip routing</span><br></pre></td></tr></table></figure>
+<p>到这里 三层交换机还有一个中继没有配，先配置路由器。<br>配置路由器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Router&gt;en</span><br><span class="line">Router#conf t</span><br><span class="line">Router(config)#int f0&#x2F;0</span><br><span class="line">Router(config-if)#no shutdown</span><br><span class="line">Router(config-if)#int f0&#x2F;0</span><br><span class="line">Router(config-if)#ip address 192.168.3.2 255.255.255.0</span><br><span class="line">Router(config-if)#ex</span><br><span class="line">Router(config)#ip route 0.0.0.0 0.0.0.0 192.168.3.1</span><br><span class="line">Router(config)#ip dhcp pool vlan10</span><br><span class="line">Router(dhcp-config)#network 192.168.1.0 255.255.255.0</span><br><span class="line">Router(dhcp-config)#dns-server 114.114.114.114</span><br><span class="line">Router(dhcp-config)#default-router 192.168.1.1</span><br><span class="line">Router(dhcp-config)#ex</span><br><span class="line">Router(config)#ip dhcp excluded-address 192.168.1.1</span><br><span class="line">Router(config)#ip dhcp pool vlan20</span><br><span class="line">Router(dhcp-config)#default-router 192.168.2.1</span><br><span class="line">Router(dhcp-config)#dns-server 114.114.114.114</span><br><span class="line">Router(dhcp-config)#network 192.168.2.0 255.255.255.0</span><br><span class="line">Router(dhcp-config)#ex</span><br><span class="line">Router(config)#ip dhcp excluded-address 192.168.2.1</span><br></pre></td></tr></table></figure>
 
-<p>输出结果：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">36</span>, <span class="number">49</span>, <span class="number">64</span>, <span class="number">81</span>, <span class="number">100</span>]</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>这样的写法，优点是简洁，缺点是调试不方便、写法不常见。</p>
-</blockquote>
-<p>上述示例等价一般代码实现：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">squares = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span> (<span class="number">1</span>,<span class="number">11</span>):</span><br><span class="line">    squares.append(i ** <span class="number">2</span>)</span><br><span class="line">print(squares)</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-3-其他列表相关操作"><a href="#3-3-其他列表相关操作" class="headerlink" title="- 3.3 其他列表相关操作"></a>- 3.3 其他列表相关操作</h3><p>列表的一些用法。</p>
-<h3 id="3-3-1-遍历整个列表"><a href="#3-3-1-遍历整个列表" class="headerlink" title="- 3.3.1 遍历整个列表"></a>- 3.3.1 遍历整个列表</h3><p>使用 for 循环来遍历整个列表：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fruits = [<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;pear&#x27;</span>, <span class="string">&#x27;peach&#x27;</span>]</span><br><span class="line"><span class="keyword">for</span> fruit <span class="keyword">in</span> fruits:</span><br><span class="line">    print(fruit)</span><br></pre></td></tr></table></figure>
-
-<p>输出结果：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">apple</span><br><span class="line">banana</span><br><span class="line">pear</span><br><span class="line">peach</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-3-2-对数字列表执行简单的统计计算"><a href="#3-3-2-对数字列表执行简单的统计计算" class="headerlink" title="- 3.3.2 对数字列表执行简单的统计计算"></a>- 3.3.2 对数字列表执行简单的统计计算</h3><p>使用<strong>交互式解释器(IDLE解释器)**来理解 **<code>min函数、max函数、sum函数</code></strong> 。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>nums = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">min</span>(nums)</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">max</span>(nums)</span><br><span class="line"><span class="number">9</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sum</span>(nums)</span><br><span class="line"><span class="number">45</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="3-4-后记"><a href="#3-4-后记" class="headerlink" title="- 3.4 后记"></a>- 3.4 后记</h3><p>我码字的速度远远比不上我学习的速度……大概吧。</p>
+<p>返回三层交换机配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">MSW1&gt;en</span><br><span class="line">MSW1#conf t</span><br><span class="line">MSW1(config)#int vlan 10</span><br><span class="line">MSW1(config-if)#ip helper-address 192.168.3.2</span><br><span class="line">MSW1(config-if)#int vlan 20</span><br><span class="line">MSW1(config-if)#ip helper-address 192.168.3.2</span><br><span class="line">MSW1(config-if)#ex</span><br></pre></td></tr></table></figure>
+<p>PC获取DHCP结果：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/cisco-02/13.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/cisco-02/13.png" srcset="data:image/png;base64,666"><br><img src="https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/cisco-02/14.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/cisco-02/14.png" srcset="data:image/png;base64,666"></p>
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>第三种方法 也可把路由器换成服务器，服务器配置几乎一致。</p>
+<p>如果有不正确的地方欢迎大佬们指正，有更好的方法欢迎大佬们指教。</p>
+<p>我真的下饭。</p>
 
   
   
@@ -507,7 +484,7 @@
               
             
               
-                <p>本文永久链接是：<a href=http://www.idealx.cn/python-basic-05/>http://www.idealx.cn/python-basic-05/</a></p>
+                <p>本文永久链接是：<a href=http://www.idealx.cn/cisco/02.html>http://www.idealx.cn/cisco/02.html</a></p>
               
             
           </blockquote>
@@ -524,7 +501,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-11T13:33:57+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-11T13:39:50+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年12月11日</p>
@@ -536,7 +513,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/python/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>python</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>语言基础</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%80%9D%E7%A7%91%E6%A8%A1%E6%8B%9F%E5%99%A8/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>思科模拟器</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/cisco/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>cisco</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>网络基础</p></a></div>
 
 
         
@@ -549,7 +526,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.idealx.cn/python-basic-05/&title=Re:从零开始的Python3学习笔记 05 - The best of ideallove&pics=https://cdn.idealx.cn/blogimage/python/python-icon.png&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.idealx.cn/cisco/02.html&title=Re:从零开始的思科模拟器之DHCP配置 - The best of ideallove&pics=https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/thumbnail.jpg&summary="
           
           >
           
@@ -561,7 +538,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.idealx.cn/python-basic-05/&title=Re:从零开始的Python3学习笔记 05 - The best of ideallove&pics=https://cdn.idealx.cn/blogimage/python/python-icon.png&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.idealx.cn/cisco/02.html&title=Re:从零开始的思科模拟器之DHCP配置 - The best of ideallove&pics=https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/thumbnail.jpg&summary="
           
           >
           
@@ -573,7 +550,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.idealx.cn/python-basic-05/&title=Re:从零开始的Python3学习笔记 05 - The best of ideallove&pics=https://cdn.idealx.cn/blogimage/python/python-icon.png&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.idealx.cn/cisco/02.html&title=Re:从零开始的思科模拟器之DHCP配置 - The best of ideallove&pics=https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/cisco/thumbnail.jpg&summary="
           
           >
           
@@ -603,22 +580,15 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/cisco-01/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Re:从零开始的思科模拟器之交换机安全端口设置</p>
-          <p class='content'>思科模拟器 之 交换机安全端口设置
-注意：本文不太适合新手直接阅读，请配合思科官方文档观看。
-
-
-本文使用的模拟器为 Cisco Packet Tracer 6.2 Student Versio...</p>
-        </a>
       
-      
-        <a class='next' href='/python-basic-04/'>
-          <p class='title'>Re:从零开始的Python3学习笔记 04<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>Python3 基础学习笔记（四） -- 列表与操作列表
+        <a class='next' href='/python/basic-06.html'>
+          <p class='title'>Re:从零开始的Python3学习笔记 06<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>Python3 基础学习笔记（六） --  元组
 
 
-- 3.1 列表列表（List）是由一系列按特定顺序的元素组成，在 Python 中用方括号 [] 来表示列表，并用逗号来分隔其中的...</p>
+- 4 元组元组（Tuple）类似列表，与列表的主要区别有以下两点。
+（1）元组不能对其元素进行变动，而列表允许。
+（2）元组用小括号表示(...</p>
         </a>
       
     </div>
@@ -661,7 +631,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-6-%E6%8E%92%E5%BA%8F%E5%88%97%E8%A1%A8%E5%85%83%E7%B4%A0"><span class="toc-text">- 3.2.6 排序列表元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-7-%E5%A4%8D%E5%88%B6%E5%88%97%E8%A1%A8"><span class="toc-text">- 3.2.7 复制列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-8-%E7%BB%9F%E8%AE%A1%E5%88%97%E8%A1%A8%E5%85%83%E7%B4%A0"><span class="toc-text">- 3.2.8 统计列表元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-9-%E5%8F%8D%E5%90%91%E5%88%97%E8%A1%A8%E5%85%83%E7%B4%A0"><span class="toc-text">- 3.2.9 反向列表元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-10-%E5%88%97%E8%A1%A8%E8%A7%A3%E6%9E%90"><span class="toc-text">- 3.2.10 列表解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E5%85%B6%E4%BB%96%E5%88%97%E8%A1%A8%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C"><span class="toc-text">- 3.3 其他列表相关操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-1-%E9%81%8D%E5%8E%86%E6%95%B4%E4%B8%AA%E5%88%97%E8%A1%A8"><span class="toc-text">- 3.3.1 遍历整个列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-2-%E5%AF%B9%E6%95%B0%E5%AD%97%E5%88%97%E8%A1%A8%E6%89%A7%E8%A1%8C%E7%AE%80%E5%8D%95%E7%9A%84%E7%BB%9F%E8%AE%A1%E8%AE%A1%E7%AE%97"><span class="toc-text">- 3.3.2 对数字列表执行简单的统计计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E5%90%8E%E8%AE%B0"><span class="toc-text">- 3.4 后记</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E7%A7%91%E6%A8%A1%E6%8B%9F%E5%99%A8-%E4%B9%8B-DHCP%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE"><span class="toc-text">思科模拟器 之 DHCP服务配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%9F%BA%E4%BA%8E%E8%B7%AF%E7%94%B1%E5%99%A8%E5%92%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84DHCP%E9%85%8D%E7%BD%AE%EF%BC%88%E6%97%A0VLAN%E5%88%92%E5%88%86%EF%BC%89"><span class="toc-text">一、基于路由器和服务器的DHCP配置（无VLAN划分）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%9F%BA%E4%BA%8E%E5%8D%95%E8%87%82%E8%B7%AF%E7%94%B1%E5%92%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84DHCP%E9%85%8D%E7%BD%AE%EF%BC%88%E5%88%92%E5%88%86VLAN%EF%BC%89"><span class="toc-text">二、基于单臂路由和服务器的DHCP配置（划分VLAN）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%9F%BA%E4%BA%8E%E4%B8%89%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%92%8C%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84DHCP%E9%85%8D%E7%BD%AE%EF%BC%88%E5%88%92%E5%88%86VLAN%EF%BC%89"><span class="toc-text">三、基于三层交换机和路由器的DHCP配置（划分VLAN）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-text">后记</span></a></li></ol>
     </div>
   </section>
 
@@ -681,13 +651,13 @@
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="Re:从零开始的Python3学习笔记 05";
+  pdata.postTitle="Re:从零开始的思科模拟器之DHCP配置";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.add("show");
+  l_header.classList.remove("show");
   
 </script>
 
