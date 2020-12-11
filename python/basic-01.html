@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.2.0'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+  <title>Re:从零开始的Python3学习笔记 01 - The best of ideallove</title>
+  
+    <meta name="keywords" content="python,语言基础">
+  
+
+  
+    <meta name="description" content="<blockquote><h3><center>Python3 基础学习笔记（一） -- 快速上手：Python基础知识1</center></h3></blockquote><br/>本节记录了 Python3 的安装方法、变量、语句、数字与字符串基础、字符串基础以及注释的使用方法。">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  
+    <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicon.ico">
+  
+
+  <!-- import link -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/first.css">
+
+  
+
+  
+  <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
+  
+
+  <script id="loadcss"></script>
+
+</head>
+
+<body>
+  
+
+<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+  <div class='container'>
+  <div id='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+            IDEALLOVE
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="搜索" />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  <div id="l_body">
+    <div id="l_cover">
+  
+    
+        <div id="half" class='cover-wrapper post dock' style="display: ;">
+          
+            <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
+          
+          <div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title">the best of ideallove</p>
+    
+    
+      <p class="subtitle">桐谷的学习笔记</p>
+    
+  </div>
+  <div class='bottom'>
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a href="/archives/"
+              
+              
+              id="archives">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg'><p>博客</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+        </div>
+    
+  
+  </div>
+
+    <div id='safearea'>
+      <div class='body-wrapper' id="pjax-container">
+        
+
+<div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+  <div class="article-meta" id="top">
+    
+    
+      <a title='Re:从零开始的Python3学习笔记 01' href='/python/basic-01.html'>
+        <img class='thumbnail' src='https://cdn.idealx.cn/blogimage/python/python-icon.png'>
+      </a>
+    
+    
+      <h1 class="title">
+        Re:从零开始的Python3学习笔记 01
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="https://www.idealx.cn/" rel="nofollow">
+    <img no-lazy src="https://cdn.idealx.cn/Avatar_1%20.jpg">
+    <p>桐谷コナン</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Python学习笔记</a><span class="sep"></span><a class="category-link" href="/categories/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">基础学习</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年3月14日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+    
+  </div>
+
+
+  
+  <blockquote>
+<p>update 2020-03-25：这是一个人类抗击病毒的历史时期才开始的笔记。这本笔记可能很长。</p>
+</blockquote>
+<blockquote><center>Python3 基础学习笔记（一） -- 快速上手：Python 基础知识1</center></blockquote>
+
+<h2 id="0-安装-Python-3"><a href="#0-安装-Python-3" class="headerlink" title="- 0 安装 Python 3"></a>- 0 安装 Python 3</h2><p>Python 语言提供了强大的交互式解释器，也可使用各种好用的编辑器或 IDE 来编写 <code>.py</code> 程序。</p>
+<h3 id="方法一：官方大法"><a href="#方法一：官方大法" class="headerlink" title="方法一：官方大法"></a>方法一：官方大法</h3><p>登陆 Python3 的官方网站：<a target="_blank" rel="noopener" href="https://www.python.org/">https://www.python.org/</a> 选择 “Download” 中的对应版本下载。</p>
+<blockquote>
+<p>Update 2020-03-14 : 可以选择 Python 3.7 系列下载</p>
+</blockquote>
+<blockquote>
+<p>Python 下载界面中出现的几个版本的介绍（以 64 位 Windows 计算机为例）：</p>
+<p>Windows help file : Windows 的帮助文档（<code>.chm</code> 文件 <del>反正都是英文我也不想看</del>）</p>
+<p>Windows x86-64 embeddable zip file : 可嵌入的 <code>zip</code> 文件</p>
+<p><strong>Windows x86-64 executable installer : 可执行文件（完整包）（基本上就是下载这个了）</strong></p>
+<p>Windows x86-64 web-based installer : 可执行文件（安装时需要网络环境）（网速快的别听上一行）</p>
+<p>Windows x86 就是 32位 的 Windows版本，后面是一样的意思。</p>
+</blockquote>
+<h3 id="方法二：Visual-Studio（微软大法）"><a href="#方法二：Visual-Studio（微软大法）" class="headerlink" title="方法二：Visual Studio（微软大法）"></a>方法二：Visual Studio（微软大法）</h3><p>在 Visual Studio 的安装器里勾选 Python 即可;（然后在 VS 的 IDE 里用就行了，是真香）</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>大多数 Linux 发行版都安装了 Python2 和 Python3，在终端中输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python2 --version</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 --version</span><br></pre></td></tr></table></figure>
+
+<p>如果两个都没有<del>（不太可能）</del>，输入以下命令即可安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python 3</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-Python-基础知识快速上手"><a href="#1-Python-基础知识快速上手" class="headerlink" title="- 1 Python 基础知识快速上手"></a>- 1 Python 基础知识<del>快速</del>上手</h2><p>本章节记录 Python 的基本使用知识。<del>（也许它很长）</del> 包括变量、数字与运算符、字符串、数据类型转换的记录，以及函数、模块的简单记录。</p>
+<h2 id="1-1-变量与语句"><a href="#1-1-变量与语句" class="headerlink" title="- 1.1 变量与语句"></a>- 1.1 变量与语句</h2><p>本节记录 <strong>变量</strong> 和 <strong>基本语句</strong> 的知识。</p>
+<h3 id="1-1-1-变量"><a href="#1-1-1-变量" class="headerlink" title="- 1.1.1 变量"></a>- 1.1.1 变量</h3><p>本节记录变量的基本概念，以及变量值类型</p>
+<p><strong>变量（variable）</strong>是表示或指向特定值的名称。变量在计算机编程中与关联的<em>标识符</em>配对内存存储位置，在使用时含相关类型的值，其值可以修改。这里的<em>标识符</em>就是<strong>变量名</strong>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x <span class="comment"># 变量X未赋值，解释器认为非法，报未定义错误</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = <span class="number">0</span> <span class="comment"># 变量X赋予初值0，解释器执行通过</span></span><br></pre></td></tr></table></figure>
+
+<p>变量建立的结果，往往被其他代码所使用。</p>
+<blockquote>
+<p>在 Python 语言中，当变量被使用时，在内存里将产生两个动作，一是开辟指定地址的空间，二是赋予指定的变量值。</p>
+<p>注意：在 Python 语言中，变量在指定的同时，必须强制赋予初值，否则解释器报错。（而 C语言 或 Java 就不一定）这和 Python 变量值类型的机制有关。</p>
+</blockquote>
+<h4 id="变量值类型和注意事项"><a href="#变量值类型和注意事项" class="headerlink" title="变量值类型和注意事项"></a>变量值类型和注意事项</h4><p>所有的编程语言的变量值都是分类型的，而 Python语言 变量值的类型在赋值后才被<strong>隐性确定</strong>。例如 <code>a=0</code> ，那么0就是整数类型的值；<code>a=&#39;good&#39;</code> 那么good就是字符串类型的值；<code>a=True</code> 那么True就是布尔类型的值。</p>
+<p>Python 语言的基本变量类型包括 <strong>字符串（String）</strong>、<strong>数字（Numeric）</strong>、<strong>列表（List）</strong>、<strong>元组（Tuple）</strong>、<strong>字典（Dictionary）</strong>五大类。</p>
+<blockquote>
+<p>变量名只能包含<strong>字母、数字和下划线</strong>。变量名可以字母或者下划线打头，但不能以数字开头 ;</p>
+<p>变量名不能包含空格，可使用下划线来分割其中的单词 ;</p>
+</blockquote>
+<blockquote>
+<p>不能将 Python关键字 或 函数名 用作变量名 ;</p>
+</blockquote>
+<blockquote>
+<p>慎用小写字母 <code>I</code> 和大写字母 <code>O</code>，因为它们在某些字体下可能被看错成数字 <code>1</code> 和 <code>0</code> ;</p>
+</blockquote>
+<blockquote>
+<p>变量对应的是常量，即不能变的数据对象，如 print(“ICBM”)，这里的 ICBM 就是常量。</p>
+</blockquote>
+<h3 id="1-1-2-赋值与输出语句"><a href="#1-1-2-赋值与输出语句" class="headerlink" title="- 1.1.2 赋值与输出语句"></a>- 1.1.2 赋值与输出语句</h3><p><strong>语句</strong>相当于 变量 和 表达式 的操作说明。语句会告诉 Python 我想干什么。</p>
+<p>在1.1节例子中的 <code>x</code> 就是变量名，其值为数字 0 。Python 使用 **赋值号 <code>=</code> **对变量进行赋值。</p>
+<p>同时，Python 使用 <code>print()</code> 函数进行输出操作;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = <span class="number">3</span> <span class="comment"># 赋值语句</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(x) <span class="comment"># 输出语句</span></span><br><span class="line"><span class="number">3</span> <span class="comment"># 结果</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = x + <span class="number">2</span> <span class="comment"># 赋值语句</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(y) <span class="comment"># 输出语句</span></span><br><span class="line"><span class="number">5</span> <span class="comment"># 结果</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">&quot;Hello Python&quot;</span>) <span class="comment"># 输出语句: 输出字符串</span></span><br><span class="line">Hello Python <span class="comment"># 结果</span></span><br></pre></td></tr></table></figure>
+
+<p>Python 允许<strong>同时为多个变量</strong>赋值，并且 <code>print()</code> 函数允许多值打印输出，用逗号分隔变量。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = b = c = <span class="number">5</span> <span class="comment"># 同时为多个变量赋值</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(a,b,c) <span class="comment"># 同时打印多个变量</span></span><br><span class="line"><span class="number">5</span> <span class="number">5</span> <span class="number">5</span> <span class="comment"># 结果</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这里的三个变量 a , b , c 在内存中指向<strong>同一个地址</strong>，获得同一个值 5。</p>
+</blockquote>
+<p>也可按照如下格式，给不同的变量名赋值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>d,e,f = <span class="number">5</span>,<span class="number">10</span>,<span class="number">15</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(d,e,f)</span><br><span class="line"><span class="number">5</span> <span class="number">10</span> <span class="number">15</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-1-3-获取用户输入"><a href="#1-1-3-获取用户输入" class="headerlink" title="- 1.1.3 获取用户输入"></a>- 1.1.3 获取用户输入</h3><p>使用 <code>input()</code> 函数获取用户输入：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">input</span>(<span class="string">&quot;Age: &quot;</span>)</span><br><span class="line">Age: <span class="number">20</span></span><br><span class="line"><span class="string">&#x27;20&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>获取输入并赋值：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = <span class="built_in">input</span>(<span class="string">&quot;x: &quot;</span>)</span><br><span class="line">x: <span class="number">34</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = <span class="built_in">input</span>(<span class="string">&quot;y: &quot;</span>)</span><br><span class="line">y: <span class="number">20</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="built_in">int</span>(x) * <span class="built_in">int</span>(y))</span><br><span class="line"><span class="number">680</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="1-2-数与运算符"><a href="#1-2-数与运算符" class="headerlink" title="- 1.2 数与运算符"></a>- 1.2 数与运算符</h2><p>交互式 Python 解释器可用作功能强大的计算器; 在编程中，经常使用数字来记录数据、储存应用信息等; Python 语言的 <strong>数字（Digital）</strong>与数学里的数字是一致的，根据数字的用法以不同的方式处理它们，根据计算机语言处理的要求，这里把数字分为<strong>整数（Integer）</strong>、<strong>浮点数（Float）</strong>、<strong>复数（Complex）</strong>、<strong>布尔（Boolean）</strong>。 </p>
+<h3 id="1-2-1-算数运算符"><a href="#1-2-1-算数运算符" class="headerlink" title="- 1.2.1 算数运算符"></a>- 1.2.1 算数运算符</h3><p>以下是计算机能识别的算术运算符和运算次序，用于数字的各种计算</p>
+<table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">中文名称</th>
+<th align="center">功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">+</td>
+<td align="center">加</td>
+<td align="center">两个数字相加</td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center">减</td>
+<td align="center">两个数字相减</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="center">乘</td>
+<td align="center">两个数字相乘</td>
+</tr>
+<tr>
+<td align="center">/</td>
+<td align="center">除</td>
+<td align="center">两个数字相除</td>
+</tr>
+<tr>
+<td align="center">%</td>
+<td align="center">取模</td>
+<td align="center">返回除法的余数</td>
+</tr>
+<tr>
+<td align="center">**</td>
+<td align="center">幂</td>
+<td align="center">返回 x 的 y 次幂</td>
+</tr>
+<tr>
+<td align="center">//</td>
+<td align="center">取整除</td>
+<td align="center">返回商的整数部分</td>
+</tr>
+<tr>
+<td align="center">()</td>
+<td align="center">运算次序</td>
+<td align="center">改变运算次序</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>1、在 Python2 版本下，当两个整数相除不能整除时，会产生 <code>取整（//）</code> 的效果，例如5/2的运算结果为2。而在 Python3 版本中，5/2的运算结果为2.5，并且所有除法的结果都为带小数的<strong>浮点数</strong>。</p>
+<p>2、0 不能做除数。</p>
+</blockquote>
+<h3 id="1-2-2-整数"><a href="#1-2-2-整数" class="headerlink" title="- 1.2.2 整数"></a>- 1.2.2 整数</h3><p>在 Python 中，<strong>整数（Integer/Int）</strong> 又称为整型，由正整数、负整数和零构成，不包括小数、分数。整数的长度不受限制，仅受可用（虚拟）内存的限制。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># 以下都是表达式，可以直接在Python解释器中运算</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">3555</span> + <span class="number">1314</span> <span class="comment"># 加法</span></span><br><span class="line"><span class="number">4869</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">3</span> - <span class="number">2</span> <span class="comment"># 减法</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">3</span> * <span class="number">2</span> <span class="comment"># 乘法</span></span><br><span class="line"><span class="number">6</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">30</span> / <span class="number">2</span> <span class="comment"># 除法（结果为浮点数）</span></span><br><span class="line"><span class="number">15.0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">3</span> // <span class="number">2</span> <span class="comment"># 除法（丢弃小数部分）</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">3</span> ** <span class="number">2</span> <span class="comment"># 乘方</span></span><br><span class="line"><span class="number">9</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">10</span> % <span class="number">3</span> <span class="comment"># 求余（取模）（即小数部分）</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">2</span> + <span class="number">3</span> * <span class="number">4</span> <span class="comment"># 运算次序</span></span><br><span class="line"><span class="number">14</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>( <span class="number">2</span> + <span class="number">3</span> ) * <span class="number">4</span> <span class="comment"># 运算次序（优先级）</span></span><br><span class="line"><span class="number">20</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-3-浮点数"><a href="#1-2-3-浮点数" class="headerlink" title="- 1.2.3 浮点数"></a>- 1.2.3 浮点数</h3><p>Python 将带小数点的数字都称为<strong>浮点数</strong>，对应数学中的<strong>实数（real）</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">0.1</span> + <span class="number">0.1</span> <span class="comment"># 浮点数加法。当然，整数位 为 0 时，可以简写成 .1 + .1 ;</span></span><br><span class="line"><span class="number">0.2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">2</span> * <span class="number">0.2</span> <span class="comment"># 整数与浮点数的乘法</span></span><br><span class="line"><span class="number">0.4</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>值得注意的是，结果包含的小数位可能是不确定的（这是由于计算机内存中存储浮点数的位数有限），暂时忽略多余的小数点即可;</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">0.1</span> + <span class="number">0.2</span></span><br><span class="line"><span class="number">0.30000000000000004</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">0.2</span> * <span class="number">0.2</span></span><br><span class="line"><span class="number">0.04000000000000001</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-4-复数"><a href="#1-2-4-复数" class="headerlink" title="- 1.2.4 复数"></a>- 1.2.4 复数</h3><p><strong>复数（Complex）</strong>由实部和虚部组成，把实数扩展到了<strong>虚数（imaginary）</strong>，数学表示形式为 <code>a+bj</code>（a为实部、b为虚部）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>(<span class="number">1</span>-<span class="number">3j</span>)	<span class="comment"># Python语言中的复数表示</span></span><br><span class="line">(<span class="number">1</span>-<span class="number">3j</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>(<span class="number">1</span>-<span class="number">3j</span>)*(<span class="number">2</span>-<span class="number">4j</span>)	<span class="comment"># 复数的乘法</span></span><br><span class="line">(-<span class="number">10</span>-<span class="number">10j</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># 复数的实部和虚部可以通过以下方法来检索确认</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>(<span class="number">1</span>-<span class="number">3j</span>).real	<span class="comment"># 检测复数的实部</span></span><br><span class="line"><span class="number">1.0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>(<span class="number">1</span>-<span class="number">3j</span>).imag	<span class="comment"># 检测复数的虚部</span></span><br><span class="line">-<span class="number">3.0</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-5-布尔"><a href="#1-2-5-布尔" class="headerlink" title="- 1.2.5 布尔"></a>- 1.2.5 布尔</h3><p><strong>布尔（Boolean）</strong>又称逻辑。在Python中用 True、False 表示，用于逻辑判断。该数据时一种特殊的整数类，True可以用1替换代表“真”；False可以用0替换代表“假”</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="literal">True</span>	<span class="comment"># 首字母必须大写，否则出错</span></span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># 布尔的逻辑运算方式（与、或、非），与数学完全一致</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="literal">True</span> <span class="keyword">and</span> <span class="literal">True</span></span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="literal">True</span> <span class="keyword">or</span> <span class="literal">False</span></span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">not</span> <span class="literal">False</span></span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-6-二进制、八进制和十六进制"><a href="#1-2-6-二进制、八进制和十六进制" class="headerlink" title="- 1.2.6 二进制、八进制和十六进制"></a>- 1.2.6 二进制、八进制和十六进制</h3><p>二进制 <code>binary</code>、八进制 <code>Octal</code>、十六进制 <code>Hexadecimal</code> 分别以下面的方式表示，这些表示都以 0 开头：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">0b1011010010</span></span><br><span class="line"><span class="number">722</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">0o10</span></span><br><span class="line"><span class="number">8</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">0xFF</span> <span class="comment"># 大小写都可以</span></span><br><span class="line"><span class="number">255</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-7-其他运算符"><a href="#1-2-7-其他运算符" class="headerlink" title="- 1.2.7 其他运算符"></a>- 1.2.7 其他运算符</h3><blockquote>
+<p>二进制位运算、比较运算符、赋值运算符等将在探索中记录。</p>
+</blockquote>
+<h2 id="1-3-字符串"><a href="#1-3-字符串" class="headerlink" title="- 1.3 字符串"></a>- 1.3 字符串</h2><h3 id="1-3-1-基本字符串"><a href="#1-3-1-基本字符串" class="headerlink" title="- 1.3.1 基本字符串"></a>- 1.3.1 基本字符串</h3><p>字符串就是一系列字符。在Python中，用引号括起来的都是字符串，其中的引号可以是 单引号 或 双引号：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;This is a string.&quot;</span></span><br><span class="line"><span class="string">&#x27;This is also a string.&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这样我们可以在写字符串的时候可以更加灵活地使用引号和撇号了;</p>
+</blockquote>
+<h3 id="1-3-2-对引号转义"><a href="#1-3-2-对引号转义" class="headerlink" title="- 1.3.2 对引号转义"></a>- 1.3.2 对引号转义</h3><p>如果不使用上述地两种引号，可以使用<strong>反斜杠</strong> <code>\</code> 对引号进行转义;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;let\&#x27;s go!&#x27;</span> <span class="comment"># 输入</span></span><br><span class="line"><span class="string">&quot;let&#x27;s go!&quot;</span> <span class="comment"># 结果</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-3-拼接字符串"><a href="#1-3-3-拼接字符串" class="headerlink" title="- 1.3.3 拼接字符串"></a>- 1.3.3 拼接字符串</h3><p>Python 支持字符串的拼接;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = <span class="string">&quot;Hello,&quot;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = <span class="string">&#x27;world.&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x + y</span><br><span class="line"><span class="string">&#x27;Hello,world.&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>对数字进行拼接的时候注意使用函数 str() 避免错误。具体在 函数 部分记录。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">visit = <span class="number">18</span></span><br><span class="line">message = <span class="string">&quot;Hello, the &quot;</span> + <span class="built_in">str</span>(visit) + <span class="string">&quot;rd visitor!&quot;</span></span><br><span class="line">print(message)</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#39;Hello, the 18rd visitor!&#39;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="1-3-4-其他"><a href="#1-3-4-其他" class="headerlink" title="- 1.3.4 其他"></a>- 1.3.4 其他</h3><blockquote>
+<p>str()、repr()、长字符串、原始字符串、字节、Unicode编码等将在探索中记录。</p>
+</blockquote>
+<h2 id="1-4-注释"><a href="#1-4-注释" class="headerlink" title="- 1.4 注释"></a>- 1.4 注释</h2><p>每款编程语言都拥有注释方式，注释让编程者能够使用自然语言在程序中添加说明，Python中注释有三种方法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">&quot;Hello Python!&quot;</span>) <span class="comment"># 这是一句输出</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#这是单行注释</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;多行注释</span></span><br><span class="line"><span class="string">多行注释&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;这也是多行注释</span></span><br><span class="line"><span class="string">这也是多行注释&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="小结-amp-amp-后记"><a href="#小结-amp-amp-后记" class="headerlink" title="小结 &amp;&amp; 后记"></a>小结 &amp;&amp; 后记</h2><p>本节记录了 Python3 的安装方法、数字、变量、语句、字符串基础以及注释的使用方法。</p>
+<p><del>我这个学网络为什么要折腾自己学个 Python???</del></p>
+<blockquote>
+<p>Update 2020/3/26 ：修改了一些不太正确的理解，添加了好多内容让博文变得好长。</p>
+</blockquote>
+
+  
+  
+    
+    <div class='footer'>
+      
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://www.idealx.cn/python/basic-01.html>http://www.idealx.cn/python/basic-01.html</a></p>
+              
+            
+          </blockquote>
+        </div>
+      
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-16T11:45:00+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年3月16日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/python/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>python</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>语言基础</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.idealx.cn/python/basic-01.html&title=Re:从零开始的Python3学习笔记 01 - The best of ideallove&pics=https://cdn.idealx.cn/blogimage/python/python-icon.png&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.idealx.cn/python/basic-01.html&title=Re:从零开始的Python3学习笔记 01 - The best of ideallove&pics=https://cdn.idealx.cn/blogimage/python/python-icon.png&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.idealx.cn/python/basic-01.html&title=Re:从零开始的Python3学习笔记 01 - The best of ideallove&pics=https://cdn.idealx.cn/blogimage/python/python-icon.png&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/python/basic-02.html'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Re:从零开始的Python3学习笔记 02</p>
+          <p class='content'>Python3 基础学习笔记（二） -- 函数、模块
+
+- 1.5 函数在 Python 中，像 C 语言一样，我们称为函数；在 Java 中，我们称为方法。
+这里记录几个比较简单的函数，后面会...</p>
+        </a>
+      
+      
+        <a class='next' href='/post/cmd-easy-beautify.html'>
+          <p class='title'>Re:从零开始让CMD控制台优雅一点点<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>这是一款相当漂亮且适合编程的字体。他们是这么说的…这是一款 Microsoft Yahei 和 Consolas 的混合字体，很适合在 Windows 和 Linux 平台下编程使用。字体名字叫...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-%E5%AE%89%E8%A3%85-Python-3"><span class="toc-text">- 0 安装 Python 3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A%E5%AE%98%E6%96%B9%E5%A4%A7%E6%B3%95"><span class="toc-text">方法一：官方大法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9AVisual-Studio%EF%BC%88%E5%BE%AE%E8%BD%AF%E5%A4%A7%E6%B3%95%EF%BC%89"><span class="toc-text">方法二：Visual Studio（微软大法）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Python-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B"><span class="toc-text">- 1 Python 基础知识快速上手</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%E5%8F%98%E9%87%8F%E4%B8%8E%E8%AF%AD%E5%8F%A5"><span class="toc-text">- 1.1 变量与语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1-%E5%8F%98%E9%87%8F"><span class="toc-text">- 1.1.1 变量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%80%BC%E7%B1%BB%E5%9E%8B%E5%92%8C%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">变量值类型和注意事项</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2-%E8%B5%8B%E5%80%BC%E4%B8%8E%E8%BE%93%E5%87%BA%E8%AF%AD%E5%8F%A5"><span class="toc-text">- 1.1.2 赋值与输出语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-3-%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E8%BE%93%E5%85%A5"><span class="toc-text">- 1.1.3 获取用户输入</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%E6%95%B0%E4%B8%8E%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">- 1.2 数与运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">- 1.2.1 算数运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-2-%E6%95%B4%E6%95%B0"><span class="toc-text">- 1.2.2 整数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-3-%E6%B5%AE%E7%82%B9%E6%95%B0"><span class="toc-text">- 1.2.3 浮点数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-4-%E5%A4%8D%E6%95%B0"><span class="toc-text">- 1.2.4 复数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-5-%E5%B8%83%E5%B0%94"><span class="toc-text">- 1.2.5 布尔</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-6-%E4%BA%8C%E8%BF%9B%E5%88%B6%E3%80%81%E5%85%AB%E8%BF%9B%E5%88%B6%E5%92%8C%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6"><span class="toc-text">- 1.2.6 二进制、八进制和十六进制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-7-%E5%85%B6%E4%BB%96%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">- 1.2.7 其他运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">- 1.3 字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-1-%E5%9F%BA%E6%9C%AC%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">- 1.3.1 基本字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-2-%E5%AF%B9%E5%BC%95%E5%8F%B7%E8%BD%AC%E4%B9%89"><span class="toc-text">- 1.3.2 对引号转义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-3-%E6%8B%BC%E6%8E%A5%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">- 1.3.3 拼接字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-4-%E5%85%B6%E4%BB%96"><span class="toc-text">- 1.3.4 其他</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-%E6%B3%A8%E9%87%8A"><span class="toc-text">- 1.4 注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93-amp-amp-%E5%90%8E%E8%AE%B0"><span class="toc-text">小结 &amp;&amp; 后记</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+
+        
+        
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+<script>
+  window.pdata={}
+  pdata.ispage=true;
+  pdata.postTitle="Re:从零开始的Python3学习笔记 01";
+  pdata.commentPath="";
+  pdata.commentPlaceholder="";
+
+  var l_header=document.getElementById("l_header");
+  
+  l_header.classList.remove("show");
+  
+</script>
+
+        
+      </div>
+      
+  
+  <footer class="footer clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+          
+            
+          
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        本站使用
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.2.0" target="_blank" class="codename">Volantis</a>
+        作为主题
+      
+    
+      
+        <div class='copyright'>
+        <p>[Copyright © 2020 ideallove]</p>
+
+        </div>
+      
+    
+  </footer>
+
+
+      <a id="s-top" class="fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+    </div>
+  </div>
+  <div>
+    <script>
+window.volantis={};
+window.volantis.loadcss=document.getElementById("loadcss");
+/********************脚本懒加载函数********************************/
+function loadScript(src, cb) {
+var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+var script = document.createElement('script');
+script.setAttribute('type','text/javascript');
+if (cb) script.onload = cb;
+script.setAttribute('src', src);
+HEAD.appendChild(script);
+}
+//https://github.com/filamentgroup/loadCSS
+var loadCSS = function( href, before, media, attributes ){
+	var doc = window.document;
+	var ss = doc.createElement( "link" );
+	var ref;
+	if( before ){
+		ref = before;
+	}
+	else {
+		var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
+		ref = refs[ refs.length - 1];
+	}
+	var sheets = doc.styleSheets;
+	if( attributes ){
+		for( var attributeName in attributes ){
+			if( attributes.hasOwnProperty( attributeName ) ){
+				ss.setAttribute( attributeName, attributes[attributeName] );
+			}
+		}
+	}
+	ss.rel = "stylesheet";
+	ss.href = href;
+	ss.media = "only x";
+	function ready( cb ){
+		if( doc.body ){
+			return cb();
+		}
+		setTimeout(function(){
+			ready( cb );
+		});
+	}
+	ready( function(){
+		ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
+	});
+	var onloadcssdefined = function( cb ){
+		var resolvedHref = ss.href;
+		var i = sheets.length;
+		while( i-- ){
+			if( sheets[ i ].href === resolvedHref ){
+				return cb();
+			}
+		}
+		setTimeout(function() {
+			onloadcssdefined( cb );
+		});
+	};
+	function loadCB(){
+		if( ss.addEventListener ){
+			ss.removeEventListener( "load", loadCB );
+		}
+		ss.media = media || "all";
+	}
+	if( ss.addEventListener ){
+		ss.addEventListener( "load", loadCB);
+	}
+	ss.onloadcssdefined = onloadcssdefined;
+	onloadcssdefined( loadCB );
+	return ss;
+};
+</script>
+<script>
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
+  
+  
+  
+  
+</script>
+<!-- required -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+<script>
+  function pjax_fancybox() {
+    $(".md .gallery").find("img").each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".md .gallery").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  function SCload_fancybox() {
+    if ($(".md .gallery").find("img").length == 0) return;
+    loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css", document.getElementById("loadcss"));
+    setTimeout(function() {
+      loadScript('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', pjax_fancybox)
+    }, 1);
+  };
+  $(function () {
+    SCload_fancybox();
+  });
+</script>
+
+
+<!-- internal -->
+
+
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+  
+    <script>
+      window.FPConfig = {
+        delay: 0,
+        ignoreKeywords: [],
+        maxRPS: 5,
+        hoverDelay: 25
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+<script src="/js/valine.js"></script>
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+
+    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
+
+    let path = pdata.commentPath;
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: path,
+      appId: "",
+      appKey: "",
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      recordIP: 'false',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });
+</script>
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+<!-- optional -->
+
+  <script>
+const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
+const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
+
+$('.input.u-search-input').one('focus',function(){
+	
+		loadScript('/js/search/hexo.js',setSearchService);
+	
+})
+
+function listenSearch(){
+  
+    customSearch = new HexoSearch({
+      imagePath: SearchServiceimagePath
+    });
+  
+}
+function setSearchService() {
+	listenSearch();
+	
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+function listennSidebarTOC() {
+  const navItems = document.querySelectorAll(".toc li");
+  if (!navItems.length) return;
+  const sections = [...navItems].map((element) => {
+    const link = element.querySelector(".toc-link");
+    const target = document.getElementById(
+      decodeURI(link.getAttribute("href")).replace("#", "")
+    );
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({
+		top: target.offsetTop + 100,
+		
+		behavior: "smooth"
+		
+	  });
+    });
+    return target;
+  });
+
+  function activateNavByIndex(target) {
+    if (target.classList.contains("active-current")) return;
+
+    document.querySelectorAll(".toc .active").forEach((element) => {
+      element.classList.remove("active", "active-current");
+    });
+    target.classList.add("active", "active-current");
+    let parent = target.parentNode;
+    while (!parent.matches(".toc")) {
+      if (parent.matches("li")) parent.classList.add("active");
+      parent = parent.parentNode;
+    }
+  }
+
+  function findIndex(entries) {
+    let index = 0;
+    let entry = entries[index];
+    if (entry.boundingClientRect.top > 0) {
+      index = sections.indexOf(entry.target);
+      return index === 0 ? 0 : index - 1;
+    }
+    for (; index < entries.length; index++) {
+      if (entries[index].boundingClientRect.top <= 0) {
+        entry = entries[index];
+      } else {
+        return sections.indexOf(entry.target);
+      }
+    }
+    return sections.indexOf(entry.target);
+  }
+
+  function createIntersectionObserver(marginTop) {
+    marginTop = Math.floor(marginTop + 10000);
+    let intersectionObserver = new IntersectionObserver(
+      (entries, observe) => {
+        let scrollHeight = document.documentElement.scrollHeight + 100;
+        if (scrollHeight > marginTop) {
+          observe.disconnect();
+          createIntersectionObserver(scrollHeight);
+          return;
+        }
+        let index = findIndex(entries);
+        activateNavByIndex(navItems[index]);
+      },
+      {
+        rootMargin: marginTop + "px 0px -100% 0px",
+        threshold: 0,
+      }
+    );
+    sections.forEach((element) => {
+      element && intersectionObserver.observe(element);
+    });
+  }
+  createIntersectionObserver(document.documentElement.scrollHeight);
+}
+
+document.addEventListener("DOMContentLoaded", listennSidebarTOC);
+document.addEventListener("pjax:success", listennSidebarTOC);
+</script>
+
+<!-- more -->
+
+
+
+
+    
+      
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#l_cover",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      //window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      if (typeof $.fancybox != "undefined") {
+        $.fancybox.close();    // 关闭弹窗
+      }
+      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
+      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      volantis.$topBtn.unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+	  
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+       
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+	 
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+          if (typeof $.fancybox == "undefined") {
+            SCload_fancybox();
+          } else {
+            pjax_fancybox();
+          }
+        
+        
+        
+        
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+	  
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+	  
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
+</body>
+</html>
