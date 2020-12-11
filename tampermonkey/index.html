@@ -19,13 +19,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>Re:从零开始的Python3学习笔记 05 - The best of ideallove</title>
+  <title>Re:从零开始优雅地挂网课 - The best of ideallove</title>
   
-    <meta name="keywords" content="python,语言基础">
+    <meta name="keywords" content="正经,科学,教程,脚本,Tampermonkey">
   
 
   
-    <meta name="description" content="<blockquote><h3><center>Python3 基础学习笔记（五）列表2</center></h3></blockquote><br/>">
+    <meta name="description" content="<img src='https://cdn.idealx.cn/blogimage/03/blog-03-cover.jfif' height=65% width=65%><br/><s>以后再也别说我开挂了！</s>本篇文章是整理 Tampermonkey 脚本管理器的安装方法。什么是脚本？Tampermonkey是什么？博客不过是整理分类自己学到的东西，杂货铺实锤。大家按需求食用即可。">
   
 
   <!-- feed -->
@@ -60,7 +60,7 @@
 <body>
   
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -311,7 +311,7 @@
     <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper post dock' style="display: ;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
           
@@ -362,13 +362,9 @@
   <div class="article-meta" id="top">
     
     
-      <a title='Re:从零开始的Python3学习笔记 05' href='/python/basic-05'>
-        <img class='thumbnail' src='https://cdn.idealx.cn/blogimage/python/python-icon.png'>
-      </a>
-    
     
       <h1 class="title">
-        Re:从零开始的Python3学习笔记 05
+        Re:从零开始优雅地挂网课
       </h1>
       <div class='new-meta-box'>
         
@@ -388,7 +384,7 @@
   <div class='new-meta-item category'>
     <a class='notlink'>
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="/categories/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Python学习笔记</a><span class="sep"></span><a class="category-link" href="/categories/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">基础学习</a>
+      <a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0%E6%9C%AC/">笔记本</a><span class="sep"></span><a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0%E6%9C%AC/%E6%95%99%E7%A8%8B/">教程</a>
     </a>
   </div>
 
@@ -399,7 +395,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年4月27日</p>
+    <p>发布于：2020年3月10日</p>
   </a>
 </div>
 
@@ -416,80 +412,83 @@
 
 
   
-  <blockquote><center>Python3 基础学习笔记（五） --  列表2</center></blockquote>
-
-<hr>
-<h3 id="3-2-6-排序列表元素"><a href="#3-2-6-排序列表元素" class="headerlink" title="- 3.2.6 排序列表元素"></a>- 3.2.6 排序列表元素</h3><p>列表元素提供了 <strong><code>sort()</code>方法</strong> 对列表进行排序。</p>
-<blockquote>
-<p>排序（Sort），按照次序分为 增序 和 减序（又叫升序、降序）；增序一般根据 ASCII 码由小到大对字符、数字进行排序，减序则相反。</p>
+  <blockquote>
+<p>这是一篇傻瓜教程，大家按需求食用即可。</p>
 </blockquote>
-<p>sort() 方法使用格式为 A.sort(key=none,reverse=False) .</p>
-<blockquote>
-<p>A 为列表对象</p>
-<p>key 为可选参数，默认值为 none，用于指定在做比较之前，调用何种函数对列表元素进行处理，比如 key=str.lower。</p>
-<p>reverse 为可选参数，默认为增序，使用reverse=True做减序处理。</p>
+<p><del>以后再也别说我开挂了！</del>本篇文章是整理 <a target="_blank" rel="noopener" href="http://www.tampermonkey.net/">Tampermonkey</a> 脚本管理器的安装方法。</p>
+<h3 id="什么是-脚本-？"><a href="#什么是-脚本-？" class="headerlink" title="什么是 脚本 ？"></a>什么是 脚本 ？</h3><blockquote>
+<p><strong>脚本</strong>（Script）是一种批处理文件的延伸，是一种纯文本保存的程序，一般来说的计算机脚本程序是确定的一系列控制计算机进行运算操作动作的组合，在其中可以实现一定的逻辑分支等。  </p>
+<p>—-百度百科=脚本</p>
 </blockquote>
-<p>示例：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">fruits = [<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;pear&#x27;</span>, <span class="string">&#x27;peach&#x27;</span>, <span class="string">&#x27;watermelon&#x27;</span>]</span><br><span class="line">fruits_1 = fruits.copy()</span><br><span class="line">fruits_2 = fruits.copy()</span><br><span class="line">fruits_1.sort()</span><br><span class="line">fruits_2.sort(reverse=<span class="literal">True</span>)</span><br><span class="line">print(fruits_1)</span><br><span class="line">print(fruits_2)</span><br></pre></td></tr></table></figure>
-
-<p>输出结果：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;peach&#x27;</span>, <span class="string">&#x27;pear&#x27;</span>, <span class="string">&#x27;watermelon&#x27;</span>]</span><br><span class="line">[<span class="string">&#x27;watermelon&#x27;</span>, <span class="string">&#x27;pear&#x27;</span>, <span class="string">&#x27;peach&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;apple&#x27;</span>]</span><br></pre></td></tr></table></figure>
-
 <blockquote>
-<p>如果不想改变原有列表，则可以采用 <strong>sorted() 函数</strong>，对列表对象直接排序。sorted 函数也可用于元组、字典的排序。</p>
+<p><strong>脚本语言</strong>（Scripting language）是为了缩短传统的“编写、编译、链接、运行”（edit-compile-link-run）过程而创建的计算机编程语言。早期的脚本语言经常被称为批处理语言或工作控制语言。一个脚本通常是解释运行而非编译。脚本语言通常都有简单、易学、易用的特性，目的就是希望能让程序员快速完成程序的编写工作。 </p>
+<p>—-维基百科=脚本语言</p>
 </blockquote>
-<h3 id="3-2-7-复制列表"><a href="#3-2-7-复制列表" class="headerlink" title="- 3.2.7 复制列表"></a>- 3.2.7 复制列表</h3><p><strong>copy() 方法</strong>使用格式为 A.copy() 。通过 copy() 方法实现列表在内存里的复制（深拷贝）。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fruits = [<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;pear&#x27;</span>, <span class="string">&#x27;peach&#x27;</span>, <span class="string">&#x27;watermelon&#x27;</span>]</span><br><span class="line">fruits_1 = fruits.copy()</span><br><span class="line">print(<span class="built_in">id</span>(fruits))		<span class="comment"># 打印列表的内存地址</span></span><br><span class="line">print(<span class="built_in">id</span>(fruits_1))</span><br></pre></td></tr></table></figure>
-
-<p>输出结果：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3044623542152</span></span><br><span class="line"><span class="number">3044632643272</span></span><br></pre></td></tr></table></figure>
-
 <blockquote>
-<p>如果是使用赋值号，则内存地址不变，是浅拷贝。</p>
+<p>JavaScript 和 Python 等都是常见的脚本语言。</p>
 </blockquote>
-<h3 id="3-2-8-统计列表元素"><a href="#3-2-8-统计列表元素" class="headerlink" title="- 3.2.8 统计列表元素"></a>- 3.2.8 统计列表元素</h3><p><strong>count() 方法</strong> 使用格式为 A.count(str) 。其中 str 为需要统计的元素。使用该方法实现对列表指定元素个数的统计。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fruits = [<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;pear&#x27;</span>, <span class="string">&#x27;peach&#x27;</span>, <span class="string">&#x27;watermelon&#x27;</span>, <span class="string">&#x27;peach&#x27;</span>]</span><br><span class="line">x = fruits.count(<span class="string">&#x27;peach&#x27;</span>)</span><br><span class="line">print(x)</span><br></pre></td></tr></table></figure>
-
-<p>输出结果：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="3-2-9-反向列表元素"><a href="#3-2-9-反向列表元素" class="headerlink" title="- 3.2.9 反向列表元素"></a>- 3.2.9 反向列表元素</h3><p><strong>reserve() 方法</strong> 使用格式为 A.reverse() 。通过该方法可以实现对列表元素的永久反向。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">text = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">print(text)</span><br><span class="line">text.reverse()</span><br><span class="line">print(text)</span><br></pre></td></tr></table></figure>
-
-<p>输出结果：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">[<span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>]</span><br></pre></td></tr></table></figure>
-
+<h3 id="Tampermonkey-是什么？"><a href="#Tampermonkey-是什么？" class="headerlink" title="Tampermonkey 是什么？"></a>Tampermonkey 是什么？</h3><p><a target="_blank" rel="noopener" href="http://www.tampermonkey.net/"><strong>Tampermonkey</strong></a> 是一款免费的浏览器扩展和最为流行的用户脚本管理器，它适用于 <a target="_blank" rel="noopener" href="http://www.tampermonkey.net/#"><strong>Chrome</strong></a>, <a target="_blank" rel="noopener" href="http://www.tampermonkey.net/#"><strong>Microsoft Edge</strong></a>, <a target="_blank" rel="noopener" href="http://www.tampermonkey.net/#"><strong>Safari</strong></a>, <a target="_blank" rel="noopener" href="http://www.tampermonkey.net/#"><strong>Opera Next</strong></a>, 和 <a target="_blank" rel="noopener" href="http://www.tampermonkey.net/#"><strong>Firefox</strong></a>。</p>
+<p>并且，你可以自己编写自己的脚本。它提供了很多功能，详情参照它的官方文档。</p>
 <blockquote>
-<p>列表做反向操作前后，列表对应的地址不变。</p>
+<p>Tampermonkey 在 Chromium 内核的兼容性非常好，这意味着绝大部分国产浏览器都可以安装。</p>
+<p>它甚至支持 Android 浏览器。</p>
 </blockquote>
-<h3 id="3-2-10-列表解析"><a href="#3-2-10-列表解析" class="headerlink" title="- 3.2.10 列表解析"></a>- 3.2.10 列表解析</h3><p>Python 语言还为列表提供了基于列表本身的元素操作语句解析功能。</p>
+<p>简单来说，Tampermonkey 可以让我们便捷地使用全世界数以百万计的脚本。接下来介绍两种非常简单的安装方式。</p>
+<h4 id="安装方式一：官方网站直接安装"><a href="#安装方式一：官方网站直接安装" class="headerlink" title="安装方式一：官方网站直接安装"></a>安装方式一：官方网站直接安装</h4><blockquote>
+<p>提示：本方法需要科学上网/魔法上网。其实从这一步也会跳转到第二种方式，只是担心下载链接的失效（Edge 的就失效了）。</p>
+</blockquote>
+<p>1、打开 <a target="_blank" rel="noopener" href="http://www.tampermonkey.net/">Tampermonkey</a> 的官网：<a target="_blank" rel="noopener" href="http://www.tampermonkey.net/">http://www.tampermonkey.net/</a> </p>
+<fancybox>
+<img src='https://cdn.idealx.cn/blogimage/03/blog-03-01.png'>
+</fancybox>
+
+<p>2、选择你的浏览器，单击下载，按照正常浏览器插件安装流程就可以了。</p>
+<h4 id="安装方式二：通过浏览器商店"><a href="#安装方式二：通过浏览器商店" class="headerlink" title="安装方式二：通过浏览器商店"></a>安装方式二：通过浏览器商店</h4><p>1、选择一款支持插件的浏览器，此处以 Chromium 内核的 Microsoft Edge 80 为例。</p>
 <blockquote>
-<p>语法如下：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[expression for iter<span class="emphasis">_val in iterable]</span></span><br><span class="line"><span class="emphasis">[expression for iter_</span>val in iterable if cond<span class="emphasis">_expr]</span></span><br></pre></td></tr></table></figure>
+<p>如果用 Chrome 也是一样的道理，但是需要魔法。</p>
 </blockquote>
-<p>示例：对集合 0~10 中，除了 0 外，其他元素做平方运算。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">squares = [i ** <span class="number">2</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">11</span>) <span class="keyword">if</span> i &gt; <span class="number">0</span>]</span><br><span class="line">print(squares)</span><br></pre></td></tr></table></figure>
+<p>2、打开浏览器的 “拓展” 界面</p>
+<fancybox>
+<img src='https://cdn.idealx.cn/blogimage/03/blog-03-02.png'>
+</fancybox>
 
-<p>输出结果：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">36</span>, <span class="number">49</span>, <span class="number">64</span>, <span class="number">81</span>, <span class="number">100</span>]</span><br></pre></td></tr></table></figure>
-
+<p>单击 “从 Microsoft Store 获取拓展”，进入微软的插件商店。</p>
 <blockquote>
-<p>这样的写法，优点是简洁，缺点是调试不方便、写法不常见。</p>
+<p>当然你可以下载 crx ，然后使用开发人员模式安装。</p>
 </blockquote>
-<p>上述示例等价一般代码实现：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">squares = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span> (<span class="number">1</span>,<span class="number">11</span>):</span><br><span class="line">    squares.append(i ** <span class="number">2</span>)</span><br><span class="line">print(squares)</span><br></pre></td></tr></table></figure>
+<p>3、搜索“Tempermonkey”，找到正版的插件，单击“获取”。然后按照插件安装流程，单击弹出的“添加插件”。</p>
+<fancybox>
+<img src='https://cdn.idealx.cn/blogimage/03/blog-03-03.png'>
+</fancybox>
 
-<h3 id="3-3-其他列表相关操作"><a href="#3-3-其他列表相关操作" class="headerlink" title="- 3.3 其他列表相关操作"></a>- 3.3 其他列表相关操作</h3><p>列表的一些用法。</p>
-<h3 id="3-3-1-遍历整个列表"><a href="#3-3-1-遍历整个列表" class="headerlink" title="- 3.3.1 遍历整个列表"></a>- 3.3.1 遍历整个列表</h3><p>使用 for 循环来遍历整个列表：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fruits = [<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;pear&#x27;</span>, <span class="string">&#x27;peach&#x27;</span>]</span><br><span class="line"><span class="keyword">for</span> fruit <span class="keyword">in</span> fruits:</span><br><span class="line">    print(fruit)</span><br></pre></td></tr></table></figure>
+<p>4、然后就安装好了。</p>
+<blockquote>
+<p>就是这么快，但是就是要水字数。</p>
+</blockquote>
+<h4 id="用它！"><a href="#用它！" class="headerlink" title="用它！"></a>用它！</h4><p>单击浏览器右上部它的猴图标。</p>
+<fancybox>
+<img src='https://cdn.idealx.cn/blogimage/03/blog-03-04.png'>
+</fancybox>
 
-<p>输出结果：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">apple</span><br><span class="line">banana</span><br><span class="line">pear</span><br><span class="line">peach</span><br></pre></td></tr></table></figure>
+<p>单击 “获取新脚本” 。</p>
+<blockquote>
+<p>获取新脚本：用别人的</p>
+<p>添加新脚本：自己写</p>
+</blockquote>
+<fancybox>
+<img src='https://cdn.idealx.cn/blogimage/03/blog-03-05.png'>
+</fancybox>
 
-<h3 id="3-3-2-对数字列表执行简单的统计计算"><a href="#3-3-2-对数字列表执行简单的统计计算" class="headerlink" title="- 3.3.2 对数字列表执行简单的统计计算"></a>- 3.3.2 对数字列表执行简单的统计计算</h3><p>使用<strong>交互式解释器(IDLE解释器)**来理解 **<code>min函数、max函数、sum函数</code></strong> 。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>nums = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">min</span>(nums)</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">max</span>(nums)</span><br><span class="line"><span class="number">9</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sum</span>(nums)</span><br><span class="line"><span class="number">45</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="3-4-后记"><a href="#3-4-后记" class="headerlink" title="- 3.4 后记"></a>- 3.4 后记</h3><p>我码字的速度远远比不上我学习的速度……大概吧。</p>
+<p>然后选择一个脚本提供商。（建议 GreasyFork ）</p>
+<p>打开之后按照脚本提供商的文档操作，搜索+安装+使用，就不多说了。</p>
+<blockquote>
+<p>你可以随时在 Tampermonkey 脚本管理器中修改所有下载的脚本以适合自己使用。并且可以随时关闭使用的脚本以在特定时间使用。</p>
+</blockquote>
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>博客不过是整理分类自己学到的东西，杂货铺实锤。</p>
+<p>大家按需求食用即可。</p>
+<blockquote>
+<p>封面图片取自互联网。</p>
+</blockquote>
 
   
   
@@ -507,7 +506,7 @@
               
             
               
-                <p>本文永久链接是：<a href=http://www.idealx.cn/python/basic-05>http://www.idealx.cn/python/basic-05</a></p>
+                <p>本文永久链接是：<a href=http://www.idealx.cn/tampermonkey/>http://www.idealx.cn/tampermonkey/</a></p>
               
             
           </blockquote>
@@ -524,10 +523,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-04-27T11:01:31+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-11T13:31:35+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年4月27日</p>
+    <p>更新于：2020年12月11日</p>
   </a>
 </div>
 
@@ -536,7 +535,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/python/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>python</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>语言基础</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%AD%A3%E7%BB%8F/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>正经</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%A7%91%E5%AD%A6/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>科学</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%99%E7%A8%8B/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>教程</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E8%84%9A%E6%9C%AC/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>脚本</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Tampermonkey/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Tampermonkey</p></a></div>
 
 
         
@@ -549,7 +548,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.idealx.cn/python/basic-05&title=Re:从零开始的Python3学习笔记 05 - The best of ideallove&pics=https://cdn.idealx.cn/blogimage/python/python-icon.png&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.idealx.cn/tampermonkey/&title=Re:从零开始优雅地挂网课 - The best of ideallove&summary="
           
           >
           
@@ -561,7 +560,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.idealx.cn/python/basic-05&title=Re:从零开始的Python3学习笔记 05 - The best of ideallove&pics=https://cdn.idealx.cn/blogimage/python/python-icon.png&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.idealx.cn/tampermonkey/&title=Re:从零开始优雅地挂网课 - The best of ideallove&summary="
           
           >
           
@@ -573,7 +572,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.idealx.cn/python/basic-05&title=Re:从零开始的Python3学习笔记 05 - The best of ideallove&pics=https://cdn.idealx.cn/blogimage/python/python-icon.png&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.idealx.cn/tampermonkey/&title=Re:从零开始优雅地挂网课 - The best of ideallove&summary="
           
           >
           
@@ -603,22 +602,15 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/cisco/01'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Re:从零开始的思科模拟器之交换机安全端口设置</p>
-          <p class='content'>思科模拟器 之 交换机安全端口设置
-注意：本文不太适合新手直接阅读，请配合思科官方文档观看。
-
-
-本文使用的模拟器为 Cisco Packet Tracer 6.2 Student Versio...</p>
+        <a class='prev' href='/cmd-easy-beautify/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Re:从零开始让CMD控制台优雅一点点</p>
+          <p class='content'>这是一款相当漂亮且适合编程的字体。他们是这么说的…这是一款 Microsoft Yahei 和 Consolas 的混合字体，很适合在 Windows 和 Linux 平台下编程使用。字体名字叫...</p>
         </a>
       
       
-        <a class='next' href='/python/basic-04'>
-          <p class='title'>Re:从零开始的Python3学习笔记 04<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>Python3 基础学习笔记（四） -- 列表与操作列表
-
-
-- 3.1 列表列表（List）是由一系列按特定顺序的元素组成，在 Python 中用方括号 [] 来表示列表，并用逗号来分隔其中的...</p>
+        <a class='next' href='/hexo-basic/'>
+          <p class='title'>Re:从零搭建Hexo博客并部署到GitHub或云服务器上<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>前言心血来潮买了云主机，浪费了几个月都没用，然后就学着搭建博客，对比了一下 WordPress 和 Hexo 之后，随性选择了以 Hexo 为框架搭建博客平台。经过了几次的从零开始，遇到了各种各...</p>
         </a>
       
     </div>
@@ -661,7 +653,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-6-%E6%8E%92%E5%BA%8F%E5%88%97%E8%A1%A8%E5%85%83%E7%B4%A0"><span class="toc-text">- 3.2.6 排序列表元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-7-%E5%A4%8D%E5%88%B6%E5%88%97%E8%A1%A8"><span class="toc-text">- 3.2.7 复制列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-8-%E7%BB%9F%E8%AE%A1%E5%88%97%E8%A1%A8%E5%85%83%E7%B4%A0"><span class="toc-text">- 3.2.8 统计列表元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-9-%E5%8F%8D%E5%90%91%E5%88%97%E8%A1%A8%E5%85%83%E7%B4%A0"><span class="toc-text">- 3.2.9 反向列表元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-10-%E5%88%97%E8%A1%A8%E8%A7%A3%E6%9E%90"><span class="toc-text">- 3.2.10 列表解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E5%85%B6%E4%BB%96%E5%88%97%E8%A1%A8%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C"><span class="toc-text">- 3.3 其他列表相关操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-1-%E9%81%8D%E5%8E%86%E6%95%B4%E4%B8%AA%E5%88%97%E8%A1%A8"><span class="toc-text">- 3.3.1 遍历整个列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-2-%E5%AF%B9%E6%95%B0%E5%AD%97%E5%88%97%E8%A1%A8%E6%89%A7%E8%A1%8C%E7%AE%80%E5%8D%95%E7%9A%84%E7%BB%9F%E8%AE%A1%E8%AE%A1%E7%AE%97"><span class="toc-text">- 3.3.2 对数字列表执行简单的统计计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E5%90%8E%E8%AE%B0"><span class="toc-text">- 3.4 后记</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-%E8%84%9A%E6%9C%AC-%EF%BC%9F"><span class="toc-text">什么是 脚本 ？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tampermonkey-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">Tampermonkey 是什么？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F%E4%B8%80%EF%BC%9A%E5%AE%98%E6%96%B9%E7%BD%91%E7%AB%99%E7%9B%B4%E6%8E%A5%E5%AE%89%E8%A3%85"><span class="toc-text">安装方式一：官方网站直接安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F%E4%BA%8C%EF%BC%9A%E9%80%9A%E8%BF%87%E6%B5%8F%E8%A7%88%E5%99%A8%E5%95%86%E5%BA%97"><span class="toc-text">安装方式二：通过浏览器商店</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E5%AE%83%EF%BC%81"><span class="toc-text">用它！</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-text">后记</span></a></li></ol>
     </div>
   </section>
 
@@ -681,13 +673,13 @@
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="Re:从零开始的Python3学习笔记 05";
+  pdata.postTitle="Re:从零开始优雅地挂网课";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
 </script>
 

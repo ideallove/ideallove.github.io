@@ -19,13 +19,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>Re:从零开始的Python3学习笔记 06 - The best of ideallove</title>
+  <title>Re:从零开始的Python3学习笔记 05 - The best of ideallove</title>
   
     <meta name="keywords" content="python,语言基础">
   
 
   
-    <meta name="description" content="<blockquote><h3><center>Python3 基础学习笔记（六）元组</center></h3></blockquote><br/>">
+    <meta name="description" content="<blockquote><h3><center>Python3 基础学习笔记（五）列表2</center></h3></blockquote><br/>">
   
 
   <!-- feed -->
@@ -60,7 +60,7 @@
 <body>
   
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -311,7 +311,7 @@
     <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper post dock' style="display: ;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
           
@@ -362,13 +362,13 @@
   <div class="article-meta" id="top">
     
     
-      <a title='Re:从零开始的Python3学习笔记 06' href='/python/basic-06'>
-        <img class='thumbnail' src='https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/python/python-icon.png'>
+      <a title='Re:从零开始的Python3学习笔记 05' href='/python-basic-05/'>
+        <img class='thumbnail' src='https://cdn.idealx.cn/blogimage/python/python-icon.png'>
       </a>
     
     
       <h1 class="title">
-        Re:从零开始的Python3学习笔记 06
+        Re:从零开始的Python3学习笔记 05
       </h1>
       <div class='new-meta-box'>
         
@@ -399,7 +399,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年5月1日</p>
+    <p>发布于：2020年4月27日</p>
   </a>
 </div>
 
@@ -416,145 +416,80 @@
 
 
   
-  <blockquote><center>Python3 基础学习笔记（六） --  元组</center></blockquote>
+  <blockquote><center>Python3 基础学习笔记（五） --  列表2</center></blockquote>
 
 <hr>
-<h3 id="4-元组"><a href="#4-元组" class="headerlink" title="- 4 元组"></a>- 4 元组</h3><p><strong>元组（Tuple）</strong>类似列表，与列表的主要区别有以下两点。</p>
-<p>（1）元组不能对其元素进行变动，而列表允许。</p>
-<p>（2）元组用小括号表示<code>()</code>，而列表使用中括号<code>[]</code>。</p>
-<h3 id="4-1-元组基础知识"><a href="#4-1-元组基础知识" class="headerlink" title="- 4.1 元组基础知识"></a>- 4.1 元组基础知识</h3><p><strong>元组（Tuple）</strong>是不可变的序列，也是一种可以存储各种数据类型的集合，用小括号 <code>()</code> 表示元组的开始和结束，元素之间用逗号 <code>,</code> 分隔。类似列表。</p>
+<h3 id="3-2-6-排序列表元素"><a href="#3-2-6-排序列表元素" class="headerlink" title="- 3.2.6 排序列表元素"></a>- 3.2.6 排序列表元素</h3><p>列表元素提供了 <strong><code>sort()</code>方法</strong> 对列表进行排序。</p>
 <blockquote>
-<p>这里的不可变，包括不能对元组对象进行增加元素、变换元素位置、修改元素、删除元素操作。</p>
+<p>排序（Sort），按照次序分为 增序 和 减序（又叫升序、降序）；增序一般根据 ASCII 码由小到大对字符、数字进行排序，减序则相反。</p>
 </blockquote>
-<p>元素中每个元素提供对应的一个下标，下标从 0 开始，0、1、2…按顺序标注。</p>
-<h3 id="4-1-1-元组基本定义"><a href="#4-1-1-元组基本定义" class="headerlink" title="- 4.1.1 元组基本定义"></a>- 4.1.1 元组基本定义</h3><p>这里使用 <code>交互式解释器（IDLE解释器）</code> 进行记录。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>()			<span class="comment"># 空元组</span></span><br><span class="line">()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>test1 = ()	<span class="comment"># 定义空元组变量</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">len</span>(test1)	<span class="comment"># 统计元组元素个数</span></span><br><span class="line"><span class="number">0</span>				<span class="comment"># 统计结果为 0</span></span><br></pre></td></tr></table></figure>
-
-<p>多数据类型的、多元素、重复元素元组对象定义：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>test2 = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>)	<span class="comment"># 定义多元素、多数据类型、可重复的数组</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>test2						<span class="comment"># 执行元组变量 test2</span></span><br><span class="line">(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>)				<span class="comment"># 显示元组变量的所有元素结果</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="4-1-2-一个元素的元组定义"><a href="#4-1-2-一个元素的元组定义" class="headerlink" title="- 4.1.2 一个元素的元组定义"></a>- 4.1.2 一个元素的元组定义</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>test3 = (<span class="number">10</span>)		<span class="comment"># 给变量 test3 赋值</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">type</span>(test3)			<span class="comment"># 用 type函数 检查 test3 的对象类型</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> &#x27;<span class="title">int</span>&#x27;&gt;			# 检查结果是整型</span></span><br></pre></td></tr></table></figure>
-
+<p>sort() 方法使用格式为 A.sort(key=none,reverse=False) .</p>
 <blockquote>
-<p>当给元组变量赋一个元素时，不能采用 <code>test3 = (1)</code>。该赋值结果 Python 会把 1 两边的小括号当作数学运算中的小括号，其结果和 <code>test3 = 1</code>  一致。</p>
+<p>A 为列表对象</p>
+<p>key 为可选参数，默认值为 none，用于指定在做比较之前，调用何种函数对列表元素进行处理，比如 key=str.lower。</p>
+<p>reverse 为可选参数，默认为增序，使用reverse=True做减序处理。</p>
 </blockquote>
-<p>要给元组变量赋一个元素，并消除小括号歧义，需要使用以下方式：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>test3 = (<span class="string">&#x27;OK&#x27;</span>,)	<span class="comment"># 给 test3 变量赋一个元组元素，必须带逗号</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">type</span>(test3)</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> &#x27;<span class="title">tuple</span>&#x27;&gt;		# 检查元组类型，正确</span></span><br><span class="line"><span class="class">&gt;&gt;&gt; <span class="title">print</span>(<span class="params">test3</span>)</span></span><br><span class="line"><span class="class">(<span class="params"><span class="string">&#x27;OK&#x27;</span>,</span>)				# 输出带逗号的元组</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>元组赋值带逗号，是元组区别于其他数据类型的一个特性。</p>
-</blockquote>
-<h3 id="4-1-3-省略小括号的元组定义"><a href="#4-1-3-省略小括号的元组定义" class="headerlink" title="- 4.1.3 省略小括号的元组定义"></a>- 4.1.3 省略小括号的元组定义</h3><p>Python 允许一种省略小括号的元组。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>name,age=<span class="string">&#x27;rain&#x27;</span>,<span class="number">19</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>(name,age)</span><br><span class="line">(<span class="string">&#x27;rain&#x27;</span>, <span class="number">19</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>name,age			<span class="comment"># 执行不带小括号的元组</span></span><br><span class="line">(<span class="string">&#x27;rain&#x27;</span>, <span class="number">19</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-2-元组基本操作"><a href="#4-2-元组基本操作" class="headerlink" title="- 4.2 元组基本操作"></a>- 4.2 元组基本操作</h3><blockquote>
-<p>元组操作实现分为三个部分：</p>
-<p>第一部分，借助运算操作符号实现，例如<code>=</code>、<code>+</code>；</p>
-<p>第二部分，借助元组自带的方法实现；</p>
-<p>第三部分，借助 Python 内置函数实现；</p>
-</blockquote>
-<p><strong>元组基本操作方法</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center">方法名称</th>
-<th align="center">方法功能描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">count</td>
-<td align="center">统计指定的元素个数</td>
-</tr>
-<tr>
-<td align="center">index</td>
-<td align="center">返回指定元素的下标</td>
-</tr>
-</tbody></table>
-<p><strong>元组操作相关内置函数</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center">函数名称</th>
-<th align="center">函数功能描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">len</td>
-<td align="center">统计元组元素个数</td>
-</tr>
-<tr>
-<td align="center">max</td>
-<td align="center">返回元组中最大值的元素</td>
-</tr>
-<tr>
-<td align="center">min</td>
-<td align="center">返回元组中最小值的元素</td>
-</tr>
-<tr>
-<td align="center">tuple</td>
-<td align="center">将列表转换为元组</td>
-</tr>
-<tr>
-<td align="center">type</td>
-<td align="center">返回对象类型</td>
-</tr>
-<tr>
-<td align="center">del</td>
-<td align="center">删除整个元组对象</td>
-</tr>
-<tr>
-<td align="center">sum</td>
-<td align="center">对元组对象的所有元素求和</td>
-</tr>
-</tbody></table>
-<h3 id="4-3-元组操作实例"><a href="#4-3-元组操作实例" class="headerlink" title="- 4.3 元组操作实例"></a>- 4.3 元组操作实例</h3><h3 id="4-3-1-建立元组"><a href="#4-3-1-建立元组" class="headerlink" title="- 4.3.1 建立元组"></a>- 4.3.1 建立元组</h3><p>创建一个 <code>.py</code> 文件：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">nums = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)				<span class="comment"># 定义元组1</span></span><br><span class="line">words = (<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;e&#x27;</span>)	<span class="comment"># 定义元组2</span></span><br><span class="line">mix = (nums, words)					<span class="comment"># 元组嵌套元组</span></span><br><span class="line">print(mix)							<span class="comment"># 打印</span></span><br><span class="line"><span class="built_in">list</span> = [<span class="string">&#x27;YES&#x27;</span>]						<span class="comment"># 定义列表</span></span><br><span class="line">mix = (nums, words, <span class="built_in">list</span>)			<span class="comment"># 元组嵌套</span></span><br><span class="line">print(mix)							<span class="comment"># 打印</span></span><br></pre></td></tr></table></figure>
+<p>示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">fruits = [<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;pear&#x27;</span>, <span class="string">&#x27;peach&#x27;</span>, <span class="string">&#x27;watermelon&#x27;</span>]</span><br><span class="line">fruits_1 = fruits.copy()</span><br><span class="line">fruits_2 = fruits.copy()</span><br><span class="line">fruits_1.sort()</span><br><span class="line">fruits_2.sort(reverse=<span class="literal">True</span>)</span><br><span class="line">print(fruits_1)</span><br><span class="line">print(fruits_2)</span><br></pre></td></tr></table></figure>
 
 <p>输出结果：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">((<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>), (<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;e&#x27;</span>))</span><br><span class="line">((<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>), (<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;e&#x27;</span>), [<span class="string">&#x27;YES&#x27;</span>])</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;peach&#x27;</span>, <span class="string">&#x27;pear&#x27;</span>, <span class="string">&#x27;watermelon&#x27;</span>]</span><br><span class="line">[<span class="string">&#x27;watermelon&#x27;</span>, <span class="string">&#x27;pear&#x27;</span>, <span class="string">&#x27;peach&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;apple&#x27;</span>]</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>从这个案例可以看出，元组不仅可以嵌套元组，还可以嵌套其他数据类型。</p>
+<p>如果不想改变原有列表，则可以采用 <strong>sorted() 函数</strong>，对列表对象直接排序。sorted 函数也可用于元组、字典的排序。</p>
 </blockquote>
-<h3 id="4-3-2-查找元素"><a href="#4-3-2-查找元素" class="headerlink" title="- 4.3.2 查找元素"></a>- 4.3.2 查找元素</h3><p>查找元组中的元组，主要通过元组下标来实现。类似列表。</p>
-<p>创建一个 <code>.py</code> 文件：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nums = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)</span><br><span class="line">print(nums[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+<h3 id="3-2-7-复制列表"><a href="#3-2-7-复制列表" class="headerlink" title="- 3.2.7 复制列表"></a>- 3.2.7 复制列表</h3><p><strong>copy() 方法</strong>使用格式为 A.copy() 。通过 copy() 方法实现列表在内存里的复制（深拷贝）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fruits = [<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;pear&#x27;</span>, <span class="string">&#x27;peach&#x27;</span>, <span class="string">&#x27;watermelon&#x27;</span>]</span><br><span class="line">fruits_1 = fruits.copy()</span><br><span class="line">print(<span class="built_in">id</span>(fruits))		<span class="comment"># 打印列表的内存地址</span></span><br><span class="line">print(<span class="built_in">id</span>(fruits_1))</span><br></pre></td></tr></table></figure>
 
 <p>输出结果：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3044623542152</span></span><br><span class="line"><span class="number">3044632643272</span></span><br></pre></td></tr></table></figure>
 
-<p>查找指定元素可以使用 <code>index方法</code> ，参考 <strong>3.2.2 查找列表元素</strong>。</p>
-<h3 id="4-3-3-删除元组"><a href="#4-3-3-删除元组" class="headerlink" title="- 4.3.3 删除元组"></a>- 4.3.3 删除元组</h3><p>对元组的元素删除是不被允许的，但可以使用 <code>del函数</code>，对整个元组进行删除。</p>
-<p>参考<strong>3.2.4 删除列表元素 （4）del 函数</strong> </p>
-<h3 id="4-3-4-统计元组"><a href="#4-3-4-统计元组" class="headerlink" title="- 4.3.4 统计元组"></a>- 4.3.4 统计元组</h3><p><strong>（1）<code>count()方法</code></strong></p>
-<p>与列表一致，参考 <strong>3.2.3 统计列表元素</strong></p>
-<p><strong>（2）<code>len 函数</code></strong></p>
-<p>通过<code>len()函数</code>进行统计。非常常见，此处不给出示例。</p>
-<p><strong>（3）<code>sum 函数</code></strong></p>
-<p>利用 <code>sum函数</code> 对数字元组求和。与列表类似，参考 <strong>3.3.2 对数字列表执行简单的统计计算</strong> 。</p>
-<h3 id="4-3-5-合并元组"><a href="#4-3-5-合并元组" class="headerlink" title="- 4.3.5 合并元组"></a>- 4.3.5 合并元组</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nums = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)</span><br><span class="line">words = (<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;e&#x27;</span>)</span><br><span class="line">mix = nums + words</span><br><span class="line">print(mix)</span><br></pre></td></tr></table></figure>
-
-<p>输出结果：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;e&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-3-6-转换元组"><a href="#4-3-6-转换元组" class="headerlink" title="- 4.3.6 转换元组"></a>- 4.3.6 转换元组</h3><p><strong>（1）列表转换为元组</strong></p>
-<p>使用 <code>tuple() 函数</code>：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">list1 = [<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;peach&#x27;</span>, <span class="string">&#x27;watermelon&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>]</span><br><span class="line">l_to_t = <span class="built_in">tuple</span>(list1)</span><br><span class="line">print(l_to_t)</span><br><span class="line">print(<span class="built_in">type</span>(l_to_t))</span><br></pre></td></tr></table></figure>
-
-<p>输出结果：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;peach&#x27;</span>, <span class="string">&#x27;watermelon&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>)</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> &#x27;<span class="title">tuple</span>&#x27;&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>（2）元组转换为列表</strong></p>
-<p>使用 <code>list() 函数</code>：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">words = (<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;e&#x27;</span>)</span><br><span class="line">t_to_l = <span class="built_in">list</span>(words)</span><br><span class="line">print(t_to_l)</span><br><span class="line">print(<span class="built_in">type</span>(t_to_l))</span><br></pre></td></tr></table></figure>
-
-<p>输出结果：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;e&#x27;</span>]</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> &#x27;<span class="title">list</span>&#x27;&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>元组和列表非常相似，甚至可以说元组是无法操作元素的列表。</p>
 <blockquote>
-<p>Update 2020-05-01：也许接下来要暂停 Python 博文编写一段时间了。</p>
+<p>如果是使用赋值号，则内存地址不变，是浅拷贝。</p>
 </blockquote>
+<h3 id="3-2-8-统计列表元素"><a href="#3-2-8-统计列表元素" class="headerlink" title="- 3.2.8 统计列表元素"></a>- 3.2.8 统计列表元素</h3><p><strong>count() 方法</strong> 使用格式为 A.count(str) 。其中 str 为需要统计的元素。使用该方法实现对列表指定元素个数的统计。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fruits = [<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;pear&#x27;</span>, <span class="string">&#x27;peach&#x27;</span>, <span class="string">&#x27;watermelon&#x27;</span>, <span class="string">&#x27;peach&#x27;</span>]</span><br><span class="line">x = fruits.count(<span class="string">&#x27;peach&#x27;</span>)</span><br><span class="line">print(x)</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-9-反向列表元素"><a href="#3-2-9-反向列表元素" class="headerlink" title="- 3.2.9 反向列表元素"></a>- 3.2.9 反向列表元素</h3><p><strong>reserve() 方法</strong> 使用格式为 A.reverse() 。通过该方法可以实现对列表元素的永久反向。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">text = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">print(text)</span><br><span class="line">text.reverse()</span><br><span class="line">print(text)</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">[<span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>列表做反向操作前后，列表对应的地址不变。</p>
+</blockquote>
+<h3 id="3-2-10-列表解析"><a href="#3-2-10-列表解析" class="headerlink" title="- 3.2.10 列表解析"></a>- 3.2.10 列表解析</h3><p>Python 语言还为列表提供了基于列表本身的元素操作语句解析功能。</p>
+<blockquote>
+<p>语法如下：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[expression for iter<span class="emphasis">_val in iterable]</span></span><br><span class="line"><span class="emphasis">[expression for iter_</span>val in iterable if cond<span class="emphasis">_expr]</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>示例：对集合 0~10 中，除了 0 外，其他元素做平方运算。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">squares = [i ** <span class="number">2</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">11</span>) <span class="keyword">if</span> i &gt; <span class="number">0</span>]</span><br><span class="line">print(squares)</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">36</span>, <span class="number">49</span>, <span class="number">64</span>, <span class="number">81</span>, <span class="number">100</span>]</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这样的写法，优点是简洁，缺点是调试不方便、写法不常见。</p>
+</blockquote>
+<p>上述示例等价一般代码实现：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">squares = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span> (<span class="number">1</span>,<span class="number">11</span>):</span><br><span class="line">    squares.append(i ** <span class="number">2</span>)</span><br><span class="line">print(squares)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-其他列表相关操作"><a href="#3-3-其他列表相关操作" class="headerlink" title="- 3.3 其他列表相关操作"></a>- 3.3 其他列表相关操作</h3><p>列表的一些用法。</p>
+<h3 id="3-3-1-遍历整个列表"><a href="#3-3-1-遍历整个列表" class="headerlink" title="- 3.3.1 遍历整个列表"></a>- 3.3.1 遍历整个列表</h3><p>使用 for 循环来遍历整个列表：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fruits = [<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;pear&#x27;</span>, <span class="string">&#x27;peach&#x27;</span>]</span><br><span class="line"><span class="keyword">for</span> fruit <span class="keyword">in</span> fruits:</span><br><span class="line">    print(fruit)</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">apple</span><br><span class="line">banana</span><br><span class="line">pear</span><br><span class="line">peach</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-2-对数字列表执行简单的统计计算"><a href="#3-3-2-对数字列表执行简单的统计计算" class="headerlink" title="- 3.3.2 对数字列表执行简单的统计计算"></a>- 3.3.2 对数字列表执行简单的统计计算</h3><p>使用<strong>交互式解释器(IDLE解释器)**来理解 **<code>min函数、max函数、sum函数</code></strong> 。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>nums = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">min</span>(nums)</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">max</span>(nums)</span><br><span class="line"><span class="number">9</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">sum</span>(nums)</span><br><span class="line"><span class="number">45</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-后记"><a href="#3-4-后记" class="headerlink" title="- 3.4 后记"></a>- 3.4 后记</h3><p>我码字的速度远远比不上我学习的速度……大概吧。</p>
 
   
   
@@ -572,7 +507,7 @@
               
             
               
-                <p>本文永久链接是：<a href=http://www.idealx.cn/python/basic-06>http://www.idealx.cn/python/basic-06</a></p>
+                <p>本文永久链接是：<a href=http://www.idealx.cn/python-basic-05/>http://www.idealx.cn/python-basic-05/</a></p>
               
             
           </blockquote>
@@ -589,10 +524,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-01T11:33:27+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-11T13:33:57+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年5月1日</p>
+    <p>更新于：2020年12月11日</p>
   </a>
 </div>
 
@@ -614,7 +549,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.idealx.cn/python/basic-06&title=Re:从零开始的Python3学习笔记 06 - The best of ideallove&pics=https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/python/python-icon.png&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.idealx.cn/python-basic-05/&title=Re:从零开始的Python3学习笔记 05 - The best of ideallove&pics=https://cdn.idealx.cn/blogimage/python/python-icon.png&summary="
           
           >
           
@@ -626,7 +561,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.idealx.cn/python/basic-06&title=Re:从零开始的Python3学习笔记 06 - The best of ideallove&pics=https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/python/python-icon.png&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.idealx.cn/python-basic-05/&title=Re:从零开始的Python3学习笔记 05 - The best of ideallove&pics=https://cdn.idealx.cn/blogimage/python/python-icon.png&summary="
           
           >
           
@@ -638,7 +573,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.idealx.cn/python/basic-06&title=Re:从零开始的Python3学习笔记 06 - The best of ideallove&pics=https://cdn.jsdelivr.net/gh/ideallove/CDN/blog/python/python-icon.png&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.idealx.cn/python-basic-05/&title=Re:从零开始的Python3学习笔记 05 - The best of ideallove&pics=https://cdn.idealx.cn/blogimage/python/python-icon.png&summary="
           
           >
           
@@ -668,23 +603,22 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/cisco/02'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Re:从零开始的思科模拟器之DHCP配置</p>
-          <p class='content'>
-本文还需要优化，这里仅给出几个案例
-
-思科模拟器 之 DHCP服务配置
-由于网络的流行和广泛使用，在企业或学校都需要配置DHCP服务器，这样可以使无论在哪的电脑，只要连上局域网，就可以通过“自...</p>
-        </a>
-      
-      
-        <a class='next' href='/cisco/01'>
-          <p class='title'>Re:从零开始的思科模拟器之交换机安全端口设置<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+        <a class='prev' href='/cisco-01/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Re:从零开始的思科模拟器之交换机安全端口设置</p>
           <p class='content'>思科模拟器 之 交换机安全端口设置
 注意：本文不太适合新手直接阅读，请配合思科官方文档观看。
 
 
 本文使用的模拟器为 Cisco Packet Tracer 6.2 Student Versio...</p>
+        </a>
+      
+      
+        <a class='next' href='/python-basic-04/'>
+          <p class='title'>Re:从零开始的Python3学习笔记 04<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>Python3 基础学习笔记（四） -- 列表与操作列表
+
+
+- 3.1 列表列表（List）是由一系列按特定顺序的元素组成，在 Python 中用方括号 [] 来表示列表，并用逗号来分隔其中的...</p>
         </a>
       
     </div>
@@ -727,7 +661,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%85%83%E7%BB%84"><span class="toc-text">- 4 元组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E5%85%83%E7%BB%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-text">- 4.1 元组基础知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-1-%E5%85%83%E7%BB%84%E5%9F%BA%E6%9C%AC%E5%AE%9A%E4%B9%89"><span class="toc-text">- 4.1.1 元组基本定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-2-%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0%E7%9A%84%E5%85%83%E7%BB%84%E5%AE%9A%E4%B9%89"><span class="toc-text">- 4.1.2 一个元素的元组定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-3-%E7%9C%81%E7%95%A5%E5%B0%8F%E6%8B%AC%E5%8F%B7%E7%9A%84%E5%85%83%E7%BB%84%E5%AE%9A%E4%B9%89"><span class="toc-text">- 4.1.3 省略小括号的元组定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E5%85%83%E7%BB%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text">- 4.2 元组基本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E5%85%83%E7%BB%84%E6%93%8D%E4%BD%9C%E5%AE%9E%E4%BE%8B"><span class="toc-text">- 4.3 元组操作实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-1-%E5%BB%BA%E7%AB%8B%E5%85%83%E7%BB%84"><span class="toc-text">- 4.3.1 建立元组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-2-%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0"><span class="toc-text">- 4.3.2 查找元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-3-%E5%88%A0%E9%99%A4%E5%85%83%E7%BB%84"><span class="toc-text">- 4.3.3 删除元组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-4-%E7%BB%9F%E8%AE%A1%E5%85%83%E7%BB%84"><span class="toc-text">- 4.3.4 统计元组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-5-%E5%90%88%E5%B9%B6%E5%85%83%E7%BB%84"><span class="toc-text">- 4.3.5 合并元组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-6-%E8%BD%AC%E6%8D%A2%E5%85%83%E7%BB%84"><span class="toc-text">- 4.3.6 转换元组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-text">小结</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-6-%E6%8E%92%E5%BA%8F%E5%88%97%E8%A1%A8%E5%85%83%E7%B4%A0"><span class="toc-text">- 3.2.6 排序列表元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-7-%E5%A4%8D%E5%88%B6%E5%88%97%E8%A1%A8"><span class="toc-text">- 3.2.7 复制列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-8-%E7%BB%9F%E8%AE%A1%E5%88%97%E8%A1%A8%E5%85%83%E7%B4%A0"><span class="toc-text">- 3.2.8 统计列表元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-9-%E5%8F%8D%E5%90%91%E5%88%97%E8%A1%A8%E5%85%83%E7%B4%A0"><span class="toc-text">- 3.2.9 反向列表元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-10-%E5%88%97%E8%A1%A8%E8%A7%A3%E6%9E%90"><span class="toc-text">- 3.2.10 列表解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E5%85%B6%E4%BB%96%E5%88%97%E8%A1%A8%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C"><span class="toc-text">- 3.3 其他列表相关操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-1-%E9%81%8D%E5%8E%86%E6%95%B4%E4%B8%AA%E5%88%97%E8%A1%A8"><span class="toc-text">- 3.3.1 遍历整个列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-2-%E5%AF%B9%E6%95%B0%E5%AD%97%E5%88%97%E8%A1%A8%E6%89%A7%E8%A1%8C%E7%AE%80%E5%8D%95%E7%9A%84%E7%BB%9F%E8%AE%A1%E8%AE%A1%E7%AE%97"><span class="toc-text">- 3.3.2 对数字列表执行简单的统计计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E5%90%8E%E8%AE%B0"><span class="toc-text">- 3.4 后记</span></a></li></ol>
     </div>
   </section>
 
@@ -747,13 +681,13 @@
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="Re:从零开始的Python3学习笔记 06";
+  pdata.postTitle="Re:从零开始的Python3学习笔记 05";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
 </script>
 
